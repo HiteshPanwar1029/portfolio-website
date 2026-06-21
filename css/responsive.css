@@ -1,0 +1,77 @@
+/* ============================================================
+   responsive.css — all media queries, consolidated.
+   Breakpoints mirror --bp-lg/md/sm in tokens.css (media queries
+   can't read custom properties, so the literals are used here).
+   ============================================================ */
+
+/* Defaults toggled by the queries below. */
+.swipe-hint { display: none; }
+.nn-mobile  { display: none; }
+
+/* Touch devices: show the swipe hint, hide the drag hint. */
+@media (hover: none) {
+  .swipe-hint { display: block; }
+  .desk-hint  { display: none; }
+}
+
+/* ---- ≤1024px : tablet / small laptop ---- */
+@media (max-width: 1024px) {
+  .cs-rail {
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cs-card { scroll-snap-align: center !important; }
+  .proj-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ---- ≤768px : mobile (nav → hamburger, SVG → card fallback) ---- */
+@media (max-width: 768px) {
+  .nav-links { display: none !important; }
+  .burger { display: flex !important; }
+  .nn-svg { display: none !important; }
+  .nn-mobile { display: block !important; }
+
+  .nav-inner { padding-left: 22px !important; padding-right: 22px !important; }
+  .hero-main { padding-left: 22px !important; padding-right: 22px !important; }
+  [data-section] { padding-left: 22px !important; padding-right: 22px !important; }
+
+  .hero-name { font-size: clamp(40px, 12vw, 72px) !important; }
+  .mq { font-size: clamp(1.5rem, 8vw, 3rem) !important; }
+  .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .about-quote { font-size: clamp(36px, 9vw, 72px) !important; }
+  .stats-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 46px !important;
+  }
+  .stat-num { font-size: clamp(48px, 15vw, 80px) !important; }
+  .skills-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .proj-grid { grid-template-columns: 1fr !important; }
+  .contact-h { font-size: clamp(40px, 11vw, 72px) !important; }
+  .contact-btns {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 360px;
+    margin: 6px auto 0 !important;
+    align-items: stretch !important;
+  }
+  .contact-btn {
+    width: 100% !important;
+    min-height: 48px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  .cs-card { width: 85vw !important; height: auto !important; min-height: 62vh; }
+  .cs-rail { padding-left: 22px !important; padding-right: 22px !important; }
+}
+
+/* ---- ≤480px : tight phones ---- */
+@media (max-width: 480px) {
+  .hero-main { padding-left: 16px !important; padding-right: 16px !important; }
+  [data-section] { padding-left: 16px !important; padding-right: 16px !important; }
+  .nav-inner { padding-left: 16px !important; padding-right: 16px !important; }
+  .cs-rail { padding-left: 16px !important; padding-right: 16px !important; }
+  .indicator { left: 16px !important; }
+}

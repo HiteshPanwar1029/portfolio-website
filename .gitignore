@@ -1,0 +1,29 @@
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ---- Windows ----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ---- Linux ----
+*~
+.directory
+
+# ---- Editors / IDEs ----
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# ---- Logs / dependency dirs (not used here, but just in case) ----
+*.log
+node_modules/

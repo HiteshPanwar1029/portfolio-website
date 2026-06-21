@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hitesh Panwar — AI Governance &amp; Risk</title>
+  <meta name="description" content="Hitesh Panwar — AI Governance &amp; Risk. Turning the EU AI Act into systems teams can actually ship: evaluation harnesses, risk controls, and ethics built into the stack.">
+
+  <!-- Favicon (placeholder — replace assets/favicon.svg with your own mark) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <!-- Optional extra icons — drop real files in /assets to enable:
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"> -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles (order matters: tokens → base → animations → sections → responsive) -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="site">
+
+  <!-- scroll progress -->
+  <div class="progress" aria-hidden="true"></div>
+  <!-- cursor glow -->
+  <div class="glow" aria-hidden="true"></div>
+  <!-- active section indicator -->
+  <div class="indicator" aria-hidden="true"></div>
+
+  <!-- ============ NAV (fixed, global) ============ -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner hero-fade">
+      <a href="#top" class="nav-logo">Hitesh Panwar<span class="accent-text">.</span></a>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#work" class="nav-link">Case Studies</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- mobile fullscreen menu -->
+  <div class="menu" id="mobile-menu">
+    <a href="#about" class="menu-link">About</a>
+    <a href="#work" class="menu-link">Case Studies</a>
+    <a href="#skills" class="menu-link">Skills</a>
+    <a href="#projects" class="menu-link">Projects</a>
+    <a href="#contact" class="menu-link">Contact</a>
+  </div>
+
+  <!-- ============ SECTION 1 — HERO ============ -->
+  <section id="top" class="hero">
+
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <div class="hero-meta-tr hero-fade">THE GOVERNANCE LAYER<br>53.3498°N / 6.2603°W</div>
+    <div class="hero-meta-bl hero-fade">EST. 2026 — DUBLIN, IE</div>
+
+    <main class="hero-main">
+      <div class="hero-inner">
+        <div class="hero-eyebrow hero-fade">
+          <span class="avail-dot" aria-hidden="true"></span>
+          Available — AI Governance &amp; Risk · Dublin / EU
+        </div>
+        <h1 class="hero-name">
+          <span class="word"><span class="char">H</span><span class="char">i</span><span class="char">t</span><span class="char">e</span><span class="char">s</span><span class="char">h</span></span>
+          <span class="word"><span class="char">P</span><span class="char">a</span><span class="char">n</span><span class="char">w</span><span class="char">a</span><span class="char">r</span></span>
+        </h1>
+        <div class="hero-subtitle">
+          <span class="word"><span class="char">A</span><span class="char">I</span></span>
+          <span class="word"><span class="char">G</span><span class="char">o</span><span class="char">v</span><span class="char">e</span><span class="char">r</span><span class="char">n</span><span class="char">a</span><span class="char">n</span><span class="char">c</span><span class="char">e</span></span>
+          <span class="word"><span class="char">&amp;</span></span>
+          <span class="word"><span class="char">R</span><span class="char">i</span><span class="char">s</span><span class="char">k</span></span>
+          <span class="word"><span class="char">|</span></span>
+          <span class="word"><span class="char">M</span><span class="char">S</span><span class="char">c</span></span>
+          <span class="word"><span class="char">M</span><span class="char">a</span><span class="char">n</span><span class="char">a</span><span class="char">g</span><span class="char">e</span><span class="char">m</span><span class="char">e</span><span class="char">n</span><span class="char">t</span><span class="char">,</span></span>
+          <span class="word"><span class="char">U</span><span class="char">C</span><span class="char">D</span></span>
+          <span class="word"><span class="char">S</span><span class="char">m</span><span class="char">u</span><span class="char">r</span><span class="char">f</span><span class="char">i</span><span class="char">t</span></span>
+        </div>
+        <div class="hero-positioning hero-fade">
+          <span class="hero-pos-bar" aria-hidden="true"></span>
+          <p class="hero-pos-text">I turn the EU AI Act into systems teams can actually ship — evaluation harnesses, risk controls, and ethics built into the stack, not bolted on as policy.</p>
+        </div>
+      </div>
+    </main>
+
+    <div class="scroll-cue hero-fade" aria-hidden="true">
+      <span class="scroll-cue-label">SCROLL</span>
+      <span class="scroll-cue-line"></span>
+    </div>
+
+    <!-- LOADER -->
+    <div class="loader">
+      <div class="loader-marquees" aria-hidden="true">
+        <div class="marquee-row marquee-row-1">
+          <span class="mq mq-1">&nbsp;&nbsp;GOVERNANCE&nbsp;&nbsp;·&nbsp;&nbsp;RISK&nbsp;&nbsp;·&nbsp;&nbsp;AI&nbsp;&nbsp;·&nbsp;&nbsp;EU AI ACT&nbsp;&nbsp;·&nbsp;&nbsp;COMPLIANCE&nbsp;&nbsp;·&nbsp;&nbsp;ETHICS&nbsp;&nbsp;·</span>
+          <span class="mq mq-1">&nbsp;&nbsp;GOVERNANCE&nbsp;&nbsp;·&nbsp;&nbsp;RISK&nbsp;&nbsp;·&nbsp;&nbsp;AI&nbsp;&nbsp;·&nbsp;&nbsp;EU AI ACT&nbsp;&nbsp;·&nbsp;&nbsp;COMPLIANCE&nbsp;&nbsp;·&nbsp;&nbsp;ETHICS&nbsp;&nbsp;·</span>
+        </div>
+        <div class="marquee-row marquee-row-2">
+          <span class="mq mq-2">&nbsp;&nbsp;GOVERNANCE&nbsp;&nbsp;·&nbsp;&nbsp;RISK&nbsp;&nbsp;·&nbsp;&nbsp;AI&nbsp;&nbsp;·&nbsp;&nbsp;EU AI ACT&nbsp;&nbsp;·&nbsp;&nbsp;COMPLIANCE&nbsp;&nbsp;·&nbsp;&nbsp;ETHICS&nbsp;&nbsp;·</span>
+          <span class="mq mq-2">&nbsp;&nbsp;GOVERNANCE&nbsp;&nbsp;·&nbsp;&nbsp;RISK&nbsp;&nbsp;·&nbsp;&nbsp;AI&nbsp;&nbsp;·&nbsp;&nbsp;EU AI ACT&nbsp;&nbsp;·&nbsp;&nbsp;COMPLIANCE&nbsp;&nbsp;·&nbsp;&nbsp;ETHICS&nbsp;&nbsp;·</span>
+        </div>
+        <div class="marquee-row marquee-row-3">
+          <span class="mq mq-3">&nbsp;&nbsp;GOVERNANCE&nbsp;&nbsp;·&nbsp;&nbsp;RISK&nbsp;&nbsp;·&nbsp;&nbsp;AI&nbsp;&nbsp;·&nbsp;&nbsp;EU AI ACT&nbsp;&nbsp;·&nbsp;&nbsp;COMPLIANCE&nbsp;&nbsp;·&nbsp;&nbsp;ETHICS&nbsp;&nbsp;·</span>
+          <span class="mq mq-3">&nbsp;&nbsp;GOVERNANCE&nbsp;&nbsp;·&nbsp;&nbsp;RISK&nbsp;&nbsp;·&nbsp;&nbsp;AI&nbsp;&nbsp;·&nbsp;&nbsp;EU AI ACT&nbsp;&nbsp;·&nbsp;&nbsp;COMPLIANCE&nbsp;&nbsp;·&nbsp;&nbsp;ETHICS&nbsp;&nbsp;·</span>
+        </div>
+      </div>
+      <div class="loader-status">
+        <span class="loader-status-label">Loading the governance layer</span>
+        <span class="loader-count"><span class="loader-count-num">00</span><span class="loader-count-pct">%</span></span>
+      </div>
+      <div class="loader-bar"></div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2 — ABOUT ============ -->
+  <section id="about" class="about" data-section data-label="ABOUT">
+    <div class="about-grid">
+      <div class="reveal-wipe" data-reveal="wipe">
+        <p class="about-quote">AI without<br><span class="accent-text">governance</span><br>is just risk.</p>
+      </div>
+      <div>
+        <p class="about-bio reveal-up" data-reveal="up" data-delay="180">I work at the layer between AI capability and accountability. With a background in computer science and training in management at UCD Smurfit, I help organizations understand what their AI systems are doing — and what that means legally, ethically, and strategically.</p>
+        <div class="about-chips reveal-up" data-reveal="up" data-delay="320">
+          <span class="chip">EU AI Act</span>
+          <span class="chip">GDPR / CIPP/E</span>
+          <span class="chip">GenAI Evaluation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEURAL NETWORK ============ -->
+  <section id="network" class="network" data-section data-label="HOW I THINK">
+    <div class="nn-header reveal-up" data-reveal="up">
+      <div class="eyebrow">How I Think</div>
+      <h2 class="nn-heading" id="nn-heading">Skills don't work in isolation. Hover one to see what it builds.</h2>
+    </div>
+
+    <div class="nn-body">
+      <!-- DESKTOP: SVG neural network -->
+      <svg class="nn-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" role="group" aria-labelledby="nn-heading">
+        <!-- input → hidden links (decorative) -->
+        <line class="nn-line" data-ih data-i="0" data-h="0" x1="210" y1="80"  x2="500" y2="120" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="0" data-h="1" x1="210" y1="80"  x2="500" y2="240" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="0" data-h="2" x1="210" y1="80"  x2="500" y2="360" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="0" data-h="3" x1="210" y1="80"  x2="500" y2="480" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="1" data-h="0" x1="210" y1="190" x2="500" y2="120" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="1" data-h="1" x1="210" y1="190" x2="500" y2="240" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="1" data-h="2" x1="210" y1="190" x2="500" y2="360" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="1" data-h="3" x1="210" y1="190" x2="500" y2="480" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="2" data-h="0" x1="210" y1="300" x2="500" y2="120" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="2" data-h="1" x1="210" y1="300" x2="500" y2="240" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="2" data-h="2" x1="210" y1="300" x2="500" y2="360" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="2" data-h="3" x1="210" y1="300" x2="500" y2="480" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="3" data-h="0" x1="210" y1="410" x2="500" y2="120" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="3" data-h="1" x1="210" y1="410" x2="500" y2="240" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="3" data-h="2" x1="210" y1="410" x2="500" y2="360" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="3" data-h="3" x1="210" y1="410" x2="500" y2="480" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="4" data-h="0" x1="210" y1="520" x2="500" y2="120" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="4" data-h="1" x1="210" y1="520" x2="500" y2="240" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="4" data-h="2" x1="210" y1="520" x2="500" y2="360" aria-hidden="true"></line>
+        <line class="nn-line" data-ih data-i="4" data-h="3" x1="210" y1="520" x2="500" y2="480" aria-hidden="true"></line>
+        <!-- hidden → output links (decorative) -->
+        <line class="nn-line" data-ho data-h="0" data-o="0" x1="500" y1="120" x2="800" y2="150" aria-hidden="true"></line>
+        <line class="nn-line" data-ho data-h="0" data-o="1" x1="500" y1="120" x2="800" y2="300" aria-hidden="true"></line>
+        <line class="nn-line" data-ho data-h="0" data-o="2" x1="500" y1="120" x2="800" y2="450" aria-hidden="true"></line>
+        <line class="nn-line" data-ho data-h="1" data-o="0" x1="500" y1="240" x2="800" y2="150" aria-hidden="true"></line>
+        <line class="nn-line" data-ho data-h="1" data-o="1" x1="500" y1="240" x2="800" y2="300" aria-hidden="true"></line>
+        <line class="nn-line" data-ho data-h="1" data-o="2" x1="500" y1="240" x2="800" y2="450" aria-hidden="true"></line>
+        <line class="nn-line" data-ho data-h="2" data-o="0" x1="500" y1="360" x2="800" y2="150" aria-hidden="true"></line>
+        <line class="nn-line" data-ho data-h="2" data-o="1" x1="500" y1="360" x2="800" y2="300" aria-hidden="true"></line>
+        <line class="nn-line" data-ho data-h="2" data-o="2" x1="500" y1="360" x2="800" y2="450" aria-hidden="true"></line>
+        <line class="nn-line" data-ho data-h="3" data-o="0" x1="500" y1="480" x2="800" y2="150" aria-hidden="true"></line>
+        <line class="nn-line" data-ho data-h="3" data-o="1" x1="500" y1="480" x2="800" y2="300" aria-hidden="true"></line>
+        <line class="nn-line" data-ho data-h="3" data-o="2" x1="500" y1="480" x2="800" y2="450" aria-hidden="true"></line>
+        <!-- hidden nodes (decorative) -->
+        <circle class="nn-hidden nn-idle-5" data-nn="hid" data-h="0" data-idle="nnFloat 2.6s ease-in-out 1.75s infinite" cx="500" cy="120" r="16" aria-hidden="true"></circle>
+        <circle class="nn-hidden nn-idle-6" data-nn="hid" data-h="1" data-idle="nnFloat 2.6s ease-in-out 2.10s infinite" cx="500" cy="240" r="16" aria-hidden="true"></circle>
+        <circle class="nn-hidden nn-idle-7" data-nn="hid" data-h="2" data-idle="nnFloat 2.6s ease-in-out 2.45s infinite" cx="500" cy="360" r="16" aria-hidden="true"></circle>
+        <circle class="nn-hidden nn-idle-8" data-nn="hid" data-h="3" data-idle="nnFloat 2.6s ease-in-out 2.80s infinite" cx="500" cy="480" r="16" aria-hidden="true"></circle>
+        <!-- output nodes (interactive: jump to section) -->
+        <circle class="nn-output nn-idle-9"  data-nn="out" data-o="0" data-target="#work"     data-idle="nnFloat 2.6s ease-in-out 3.15s infinite" cx="800" cy="150" r="22" tabindex="0" role="link" aria-label="Work output: MechaHitler Case Study. Activate to jump to Case Studies."></circle>
+        <circle class="nn-output nn-idle-10" data-nn="out" data-o="1" data-target="#projects" data-idle="nnFloat 2.6s ease-in-out 3.50s infinite" cx="800" cy="300" r="22" tabindex="0" role="link" aria-label="Work output: AI Compliance App. Activate to jump to Projects."></circle>
+        <circle class="nn-output nn-idle-11" data-nn="out" data-o="2" data-target="#projects" data-idle="nnFloat 2.6s ease-in-out 3.85s infinite" cx="800" cy="450" r="22" tabindex="0" role="link" aria-label="Work output: Resume Dashboard. Activate to jump to Projects."></circle>
+        <!-- input nodes (interactive: highlight what the skill builds) -->
+        <circle class="nn-input nn-idle-0" data-nn="in" data-i="0" data-idle="nnFloat 2.6s ease-in-out 0.00s infinite" cx="210" cy="80"  r="22" tabindex="0" role="button" aria-label="Skill: EU AI Act & Regulation. Activate to trace what it builds."></circle>
+        <circle class="nn-input nn-idle-1" data-nn="in" data-i="1" data-idle="nnFloat 2.6s ease-in-out 0.35s infinite" cx="210" cy="190" r="22" tabindex="0" role="button" aria-label="Skill: GenAI Evaluation. Activate to trace what it builds."></circle>
+        <circle class="nn-input nn-idle-2" data-nn="in" data-i="2" data-idle="nnFloat 2.6s ease-in-out 0.70s infinite" cx="210" cy="300" r="22" tabindex="0" role="button" aria-label="Skill: Data Science / Python. Activate to trace what it builds."></circle>
+        <circle class="nn-input nn-idle-3" data-nn="in" data-i="3" data-idle="nnFloat 2.6s ease-in-out 1.05s infinite" cx="210" cy="410" r="22" tabindex="0" role="button" aria-label="Skill: AI Ethics. Activate to trace what it builds."></circle>
+        <circle class="nn-input nn-idle-4" data-nn="in" data-i="4" data-idle="nnFloat 2.6s ease-in-out 1.40s infinite" cx="210" cy="520" r="22" tabindex="0" role="button" aria-label="Skill: Strategic Analysis. Activate to trace what it builds."></circle>
+        <!-- static labels (visual only) -->
+        <text class="nn-label-in"  data-inlabel data-i="0" x="174" y="80"  dominant-baseline="central" text-anchor="end" aria-hidden="true"><tspan class="nn-tspan">S1 · </tspan>EU AI Act &amp; Regulation</text>
+        <text class="nn-label-in"  data-inlabel data-i="1" x="174" y="190" dominant-baseline="central" text-anchor="end" aria-hidden="true"><tspan class="nn-tspan">S2 · </tspan>GenAI Evaluation</text>
+        <text class="nn-label-in"  data-inlabel data-i="2" x="174" y="300" dominant-baseline="central" text-anchor="end" aria-hidden="true"><tspan class="nn-tspan">S3 · </tspan>Data Science / Python</text>
+        <text class="nn-label-in"  data-inlabel data-i="3" x="174" y="410" dominant-baseline="central" text-anchor="end" aria-hidden="true"><tspan class="nn-tspan">S4 · </tspan>AI Ethics</text>
+        <text class="nn-label-in"  data-inlabel data-i="4" x="174" y="520" dominant-baseline="central" text-anchor="end" aria-hidden="true"><tspan class="nn-tspan">S5 · </tspan>Strategic Analysis</text>
+        <text class="nn-label-out" data-outlabel data-o="0" x="836" y="150" dominant-baseline="central" text-anchor="start" aria-hidden="true">MechaHitler Case Study<tspan class="nn-tspan"> · W1</tspan></text>
+        <text class="nn-label-out" data-outlabel data-o="1" x="836" y="300" dominant-baseline="central" text-anchor="start" aria-hidden="true">AI Compliance App<tspan class="nn-tspan"> · W2</tspan></text>
+        <text class="nn-label-out" data-outlabel data-o="2" x="836" y="450" dominant-baseline="central" text-anchor="start" aria-hidden="true">Resume Dashboard<tspan class="nn-tspan"> · W3</tspan></text>
+      </svg>
+
+      <!-- MOBILE: tappable stacked fallback -->
+      <div class="nn-mobile">
+        <div class="nn-mobile-label">INPUT — TAP A SKILL</div>
+        <div class="nn-mobile-skills">
+          <button class="nn-mskill" type="button" data-mskill data-i="0">EU AI Act &amp; Regulation</button>
+          <button class="nn-mskill" type="button" data-mskill data-i="1">GenAI Evaluation</button>
+          <button class="nn-mskill" type="button" data-mskill data-i="2">Data Science / Python</button>
+          <button class="nn-mskill" type="button" data-mskill data-i="3">AI Ethics</button>
+          <button class="nn-mskill" type="button" data-mskill data-i="4">Strategic Analysis</button>
+        </div>
+        <div class="nn-mobile-label-row">OUTPUT — WHAT IT BUILDS<span class="nn-mobile-rule" aria-hidden="true"></span></div>
+        <div class="nn-mobile-outs">
+          <button class="nn-mout" type="button" data-mout data-o="0" data-target="#work">MechaHitler Case Study</button>
+          <button class="nn-mout" type="button" data-mout data-o="1" data-target="#projects">AI Compliance App</button>
+          <button class="nn-mout" type="button" data-mout data-o="2" data-target="#projects">Resume Dashboard</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nn-foot">Tap a skill to trace it to my work.</div>
+  </section>
+
+  <!-- ============ SECTION 3 — STATS ============ -->
+  <section class="stats" data-section data-label="CREDENTIALS">
+    <div class="stats-grid">
+      <div class="stat reveal-up" data-reveal="up" data-delay="0">
+        <div class="stat-num"><span data-count="3">3</span><span class="accent-text">+</span></div>
+        <div class="stat-label">AI Governance Frameworks</div>
+      </div>
+      <div class="stat reveal-up" data-reveal="up" data-delay="120">
+        <div class="stat-num"><span data-count="5">5</span><span class="accent-text"></span></div>
+        <div class="stat-label">Roles Across AI &amp; Data</div>
+      </div>
+      <div class="stat reveal-up" data-reveal="up" data-delay="240">
+        <div class="stat-num"><span data-count="2">2</span><span class="accent-text"></span></div>
+        <div class="stat-label">Regulatory Domains (GDPR · EU AI Act)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4 — CASE STUDIES ============ -->
+  <section id="work" class="cases" data-section data-label="CASE STUDIES">
+    <div class="cases-header reveal-up" data-reveal="up">
+      <div class="eyebrow">Selected Work</div>
+      <h2 class="section-heading">Three problems I've thought hard about.</h2>
+    </div>
+    <div class="hscroll cs-rail">
+      <article class="cs-card">
+        <div class="cs-num">01 / 03</div>
+        <div>
+          <span class="cs-tag">AI Ethics · Virtue Ethics · Corporate Accountability</span>
+          <h3 class="cs-title">The MechaHitler Problem</h3>
+          <p class="cs-desc">When Grok published neo-Nazi content and xAI said nothing — a virtue ethics analysis of the Chun (2017) framework applied to frontier AI.</p>
+          <a href="#" class="cs-link">Read Analysis →</a>
+        </div>
+      </article>
+      <article class="cs-card">
+        <div class="cs-num">02 / 03</div>
+        <div>
+          <span class="cs-tag">EU AI Act · GDPR · Interactive Learning</span>
+          <h3 class="cs-title">Building the Compliance Layer</h3>
+          <p class="cs-desc">Designed and built a standalone AI compliance learning app covering DPIA methodology, risk classification, and governance frameworks — no build tools, no API costs.</p>
+          <a href="#" class="cs-link">See Project →</a>
+        </div>
+      </article>
+      <article class="cs-card">
+        <div class="cs-num">03 / 03</div>
+        <div>
+          <span class="cs-tag">GenAI Evaluation · Data Quality · Outlier</span>
+          <h3 class="cs-title">Evaluating What Models Don't Say</h3>
+          <p class="cs-desc">18 months evaluating frontier model outputs for accuracy, bias, and reasoning quality — what I learned about where models fail governance requirements.</p>
+          <a href="#" class="cs-link">Read More →</a>
+        </div>
+      </article>
+    </div>
+    <div class="desk-hint">↔ DRAG OR SHIFT-SCROLL TO EXPLORE</div>
+    <div class="swipe-hint">← swipe →</div>
+  </section>
+
+  <!-- ============ SECTION 5 — SKILLS ============ -->
+  <section id="skills" class="skills" data-section data-label="SKILLS">
+    <div class="wrap">
+      <div class="reveal-up" data-reveal="up">
+        <div class="eyebrow">Capabilities</div>
+        <h2 class="section-heading">How I think — not just what I know.</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="reveal-up reveal-far" data-reveal="up" data-delay="0">
+          <div class="skill-col-label">Regulatory Intelligence</div>
+          <div class="skill-item">EU AI Act (Risk Classification, Prohibited Practices)</div>
+          <div class="skill-item">GDPR &amp; Data Protection</div>
+          <div class="skill-item">DPIA Methodology</div>
+          <div class="skill-item">AI Ethics Frameworks</div>
+          <div class="skill-item">Virtue Ethics (Chun 2017)</div>
+        </div>
+        <div class="reveal-up reveal-far" data-reveal="up" data-delay="120">
+          <div class="skill-col-label">Technical Foundation</div>
+          <div class="skill-item">Python &amp; Data Science</div>
+          <div class="skill-item">Computer Vision (OpenCV)</div>
+          <div class="skill-item">GenAI Output Evaluation</div>
+          <div class="skill-item">Prompt Engineering</div>
+          <div class="skill-item">NLP &amp; Text Annotation</div>
+        </div>
+        <div class="reveal-up reveal-far" data-reveal="up" data-delay="240">
+          <div class="skill-col-label">Strategic Thinking</div>
+          <div class="skill-item">McKinsey SCR Framework</div>
+          <div class="skill-item">Stakeholder Analysis</div>
+          <div class="skill-item">Risk Assessment (1LOD/2LOD)</div>
+          <div class="skill-item">Consulting Communication</div>
+          <div class="skill-item">Academic Research</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 6 — PROJECTS ============ -->
+  <section id="projects" class="projects" data-section data-label="PROJECTS">
+    <div class="wrap">
+      <div class="reveal-up" data-reveal="up">
+        <div class="eyebrow">Builds</div>
+        <h2 class="section-heading">Things I made to solve real problems.</h2>
+      </div>
+      <div class="proj-grid">
+        <article class="proj-card" data-reveal="up" data-delay="0">
+          <div class="proj-tags">
+            <span class="proj-tag">Claude API</span>
+            <span class="proj-tag">Vanilla JS</span>
+            <span class="proj-tag">Local Tool</span>
+          </div>
+          <h3 class="proj-title">Resume Analysis Dashboard</h3>
+          <p class="proj-desc">A local, no-API-key dashboard that reads CVs and job descriptions, scores ATS compatibility, identifies keyword gaps, and drafts cover letters.</p>
+          <a href="#" class="proj-link">↗ GitHub</a>
+        </article>
+        <article class="proj-card" data-reveal="up" data-delay="120">
+          <div class="proj-tags">
+            <span class="proj-tag">HTML/CSS/JS</span>
+            <span class="proj-tag">EU AI Act</span>
+            <span class="proj-tag">GDPR</span>
+          </div>
+          <h3 class="proj-title">AI Compliance Learning App</h3>
+          <p class="proj-desc">Interactive compliance education tool covering DPIA methodology, risk tiers, and governance frameworks. Static — no backend required.</p>
+          <a href="#" class="proj-link">↗ GitHub</a>
+        </article>
+        <article class="proj-card" data-reveal="up" data-delay="240">
+          <div class="proj-tags">
+            <span class="proj-tag">SEO</span>
+            <span class="proj-tag">Content Strategy</span>
+            <span class="proj-tag">Web</span>
+          </div>
+          <h3 class="proj-title">Heritage Tourism Content Platform</h3>
+          <p class="proj-desc">Founded and built an SEO-optimized heritage tourism website. Applied content strategy frameworks to drive organic discovery.</p>
+          <a href="#" class="proj-link">↗ Live Site</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 7 — CONTACT ============ -->
+  <section id="contact" class="contact" data-section data-label="CONTACT">
+    <div class="contact-grid" aria-hidden="true"></div>
+    <div class="contact-inner reveal-contact" data-reveal="up">
+      <div class="contact-eyebrow">Open to Opportunities</div>
+      <h2 class="contact-h">Let's talk AI<br>governance.</h2>
+      <div class="contact-btns">
+        <a class="contact-btn" href="mailto:hitesh@email.com">→ hitesh@email.com</a>
+        <a class="contact-btn" href="#">→ LinkedIn</a>
+      </div>
+    </div>
+    <div class="contact-foot">Hitesh Panwar · Dublin, Ireland · 2026</div>
+  </section>
+
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

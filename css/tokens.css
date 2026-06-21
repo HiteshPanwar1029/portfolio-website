@@ -1,0 +1,51 @@
+/* ============================================================
+   tokens.css — Design tokens (single source of truth)
+   ------------------------------------------------------------
+   Every colour, font-family and breakpoint used anywhere in the
+   site is declared here. Other stylesheets reference these via
+   var(); they should contain NO raw hex values or font literals.
+
+   Colour note: there are TWO blues on purpose.
+     --accent  (#4718f2) is the tweakable brand accent — progress
+               bar, chips, buttons, card hovers, loader bar.
+     --signal  (#2D5BE3) is the neural-network / glow blue and the
+               ::selection colour. It is intentionally distinct
+               from --accent; do not merge them.
+
+   The *-rgb tokens hold bare "r,g,b" triplets so any opacity can
+   be composed with rgba(var(--fg-rgb), 0.32) without inventing a
+   new token per alpha value.
+   ============================================================ */
+
+:root {
+  /* ---- Core colours ---- */
+  --bg:      #0A0A0F;   /* page background            */
+  --panel:   #1A1A24;   /* raised panels / cards      */
+  --fg:      #F0EDE6;   /* primary foreground / text  */
+  --tan:     #C8B89A;   /* muted secondary text       */
+  --accent:  #4718f2;   /* tweakable brand accent     */
+  --signal:  #2D5BE3;   /* neural network + glow blue */
+
+  /* ---- RGB triplets (compose with rgba(var(--x-rgb), a)) ---- */
+  --bg-rgb:     10, 10, 15;
+  --fg-rgb:     240, 237, 230;
+  --tan-rgb:    200, 184, 154;
+  --signal-rgb: 45, 91, 227;
+
+  /* ---- Derived single-use colours ---- */
+  --nav-scrim: rgba(var(--bg-rgb), 0.82);  /* frosted sticky-nav background */
+
+  /* ---- Typography ---- */
+  --font-display: 'Space Grotesk', sans-serif;  /* headlines, nav, UI    */
+  --font-mono:    'JetBrains Mono', monospace;   /* labels, tags, data    */
+  --font-body:    'Inter', sans-serif;           /* body copy             */
+
+  /* ---- Breakpoints (reference values) ----
+     NOTE: CSS media queries cannot read custom properties, so the
+     @media rules in responsive.css use these literals directly.
+     They are mirrored here for documentation and for any JS that
+     needs them (see js/* matchMedia calls: 1025 / 768 / hover). */
+  --bp-lg: 1024px;   /* tablet / small laptop  */
+  --bp-md: 768px;    /* mobile nav + nn fallback */
+  --bp-sm: 480px;    /* tight phones           */
+}

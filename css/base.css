@@ -1,0 +1,76 @@
+/* ============================================================
+   base.css — resets, document defaults, shared primitives
+   ============================================================ */
+
+*,
+*::before,
+*::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+html,
+body {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  color: var(--fg);
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--signal);
+  color: var(--fg);
+}
+
+/* Root site wrapper — owns the colour context and the reveal flag. */
+.site {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-display);
+}
+
+/* Horizontal scroller — hide scrollbar cross-browser. */
+.hscroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hscroll::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+/* ---- Shared type primitives (reused across sections) ---- */
+
+/* Small uppercase mono eyebrow above section headings. */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--tan);
+}
+
+/* Section heading (the "Three problems…" style lines). */
+.section-heading {
+  margin-top: 14px;
+  font-weight: 500;
+  font-size: clamp(1.9rem, 3.8vw, 2.4rem);
+  letter-spacing: -0.015em;
+  color: var(--fg);
+}
+
+/* Accessible-only text (used for SVG / icon labelling). */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Generic content max-width wrapper used by several sections. */
+.wrap { max-width: 1280px; margin: 0 auto; width: 100%; }
