@@ -5,7 +5,8 @@
       "Bash(gh --version)",
       "Bash(gh auth *)",
       "PowerShell(gh *)",
-      "PowerShell(git *)"
+      "PowerShell(git *)",
+      "PowerShell(python -m http.server 8123 --directory Z:\\\\website)"
     ]
   }
 }

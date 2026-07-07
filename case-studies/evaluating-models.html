@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evaluating What Models Don't Say — Case Study · Hitesh Panwar</title>
+  <meta name="description" content="Nine months evaluating frontier-model outputs for accuracy, bias, and reasoning quality — and what that taught me about the gap between what evals measure and what governance requires.">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles (order matters: tokens → base → animations → sections → responsive → case-study) -->
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/sections.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+<div class="site">
+
+  <!-- scroll progress -->
+  <div class="progress" aria-hidden="true"></div>
+  <!-- cursor glow -->
+  <div class="glow" aria-hidden="true"></div>
+  <!-- active section indicator -->
+  <div class="indicator" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Hitesh Panwar<span class="accent-text">.</span></a>
+      <div class="nav-links">
+        <a href="../index.html#work" class="nav-link">← All Case Studies</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- mobile fullscreen menu -->
+  <div class="menu" id="mobile-menu">
+    <a href="../index.html#work" class="menu-link">All Case Studies</a>
+    <a href="../index.html#about" class="menu-link">About</a>
+    <a href="../index.html#contact" class="menu-link">Contact</a>
+  </div>
+
+  <!-- ============ PAGE HEAD ============ -->
+  <header class="study-head" data-section data-label="OVERVIEW">
+    <div class="study-head-grid" aria-hidden="true"></div>
+    <div class="study-head-glow" aria-hidden="true"></div>
+    <div class="study-head-inner">
+      <div class="study-eyebrow reveal-up" data-reveal="up">
+        <a href="../index.html#work">Case Studies</a>
+        <span class="study-eyebrow-sep" aria-hidden="true">/</span>
+        <span>03 · 03</span>
+      </div>
+      <div class="study-tags reveal-up" data-reveal="up" data-delay="80">
+        <span class="chip">GenAI Evaluation</span>
+        <span class="chip">Data Quality</span>
+        <span class="chip">Outlier</span>
+      </div>
+      <h1 class="study-title reveal-up" data-reveal="up" data-delay="140">Evaluating What Models Don't Say</h1>
+      <p class="study-standfirst reveal-up" data-reveal="up" data-delay="220">Nine months scoring frontier-model outputs for accuracy, bias, and reasoning quality — and the uncomfortable lesson that the most consequential failures are the ones no rubric was pointed at.</p>
+      <dl class="study-meta reveal-up" data-reveal="up" data-delay="300">
+        <div>
+          <dt>Role</dt>
+          <dd>GenAI evaluator — output quality &amp; annotation</dd>
+        </div>
+        <div>
+          <dt>Duration</dt>
+          <dd>9 months (Oct 2025–Present)</dd>
+        </div>
+        <div>
+          <dt>Focus</dt>
+          <dd>Accuracy · bias · reasoning quality</dd>
+        </div>
+        <div>
+          <dt>Context</dt>
+          <dd>Frontier-model outputs (Outlier · RWS Group)</dd>
+        </div>
+      </dl>
+    </div>
+  </header>
+
+  <!-- ============ ARTICLE ============ -->
+  <article class="study-body">
+
+    <section class="study-section" data-section data-label="THE WORK">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">01</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Work</span>
+        </div>
+        <h2 class="study-h2">Evaluation is not reading outputs. It's disagreeing with them, systematically.</h2>
+        <p>For the past nine months my job was to be the adversarial reader frontier models don't otherwise get: scoring responses against rubrics, running pairwise comparisons between candidate outputs, probing with adversarial follow-ups, and annotating reasoning chains step by step to find where a correct-looking answer went wrong — or a wrong-looking one was actually right.</p>
+        <p>At volume — thousands of outputs across domains — the work changes how you read model text. You stop asking <em>"is this good?"</em> and start asking <strong>"what would have to be true for this to be wrong, and did the model rule that out or just not mention it?"</strong> That second question is where everything interesting in this case study lives.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="FAILURE MODES">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">02</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">A Taxonomy of Failure</span>
+        </div>
+        <h2 class="study-h2">Five patterns showed up again and again.</h2>
+        <ul class="study-list">
+          <li><strong>Confident fabrication.</strong> The famous one — invented citations, statistics, case law — and honestly the easiest to catch, because it makes checkable claims.</li>
+          <li><strong>Sycophantic drift.</strong> Given a leading question with a false premise, the model optimises for agreement over correction. The error originates with the user, but the model launders it into fluent authority.</li>
+          <li><strong>Silent omission.</strong> Everything stated is true; the answer is still dangerous because the one caveat that matters — the contraindication, the exception, the jurisdiction where the advice inverts — simply isn't there.</li>
+          <li><strong>Reasoning theatre.</strong> A correct final answer reached by a broken chain of reasoning. Scored on the answer alone it passes; the process that produced it will fail unpredictably on the next input.</li>
+          <li><strong>Distributional bias.</strong> Invisible in any single output, visible only across hundreds: whose names appear in the "good" examples, which defaults get assumed, which dialects get corrected.</li>
+        </ul>
+        <p>Rank these by how often standard evaluation catches them and the ordering is nearly the reverse of how much harm they do. Fabrication is loud. <strong>Omission is silent, and omission is the one that ends up in front of a regulator.</strong></p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="THE GAP">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">03</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Governance Gap</span>
+        </div>
+        <h2 class="study-h2">Evals score what's present. Liability attaches to what's missing.</h2>
+        <p>Here is the structural problem. An evaluation rubric is a checklist run against the text in front of you — accuracy of stated claims, relevance, tone, format. <strong>An answer can score perfectly on all of it while omitting the fact that changes the user's decision.</strong> A medication answer that is accurate sentence-by-sentence but skips the interaction warning. A compliance answer that is right for the jurisdiction it silently assumed.</p>
+        <div class="study-quote">
+          <p>"The model never lied to you. It just didn't mention the thing that mattered — and no metric noticed, because metrics read what's on the page."</p>
+        </div>
+        <p>Now put that next to the EU AI Act. Article 15 requires high-risk systems to achieve <em>appropriate levels of accuracy and robustness</em>, declared and measured. But accuracy metrics presuppose that errors are measurable in the output. Omission is <strong>unmeasured error</strong> — it lives in the gap between the answer given and the answer a competent professional would have given. Providers will demonstrate compliance with dashboards full of accuracy scores that are structurally blind to the failure mode most likely to cause the harm the Act exists to prevent.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="BETTER EVALS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">04</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">What Good Looks Like</span>
+        </div>
+        <h2 class="study-h2">Evaluating omission means scoring against a reference, not against the text.</h2>
+        <p>The techniques that actually caught the dangerous failures in my experience share one property: they bring outside structure to the judgement rather than asking the rater to react to the output alone.</p>
+        <ul class="study-list">
+          <li><strong>Completeness rubrics.</strong> For each domain, a checklist of what a competent answer must mention — built with domain experts before evaluation starts. The score is against the checklist, not the vibe.</li>
+          <li><strong>Counterfactual probes.</strong> Re-ask the question with the premise flipped or the jurisdiction changed. Sycophancy and silent assumptions surface immediately when the answer doesn't move and should.</li>
+          <li><strong>Reasoning-chain annotation.</strong> Score the path, not just the destination — reasoning theatre is only visible step by step.</li>
+          <li><strong>Calibration checks.</strong> Track whether the model's expressed confidence correlates with its error rate. A system that is wrong at the same confidence it is right at cannot support the human oversight Article 14 assumes.</li>
+          <li><strong>Evals as regression suites.</strong> Run on every model or prompt change with the authority to block release — not produced once for a conformity file and left to age.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="LESSONS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">05</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">For Governance Teams</span>
+        </div>
+        <h2 class="study-h2">What I'd tell a governance team on day one.</h2>
+        <p>Evaluation is where AI governance stops being a document and becomes an observation. Policies describe intended behaviour; evals are the only instrument that reports actual behaviour — which makes eval design a governance decision, not a technical afterthought to be delegated entirely to the ML team.</p>
+        <div class="study-callout">
+          <div class="study-callout-label">Key Takeaways</div>
+          <ul class="study-list">
+            <li><strong>Build the eval before the policy.</strong> A policy you can't test is a hope. The completeness checklist for your highest-risk use case is worth more than fifty pages of principles.</li>
+            <li><strong>Treat eval coverage like test coverage.</strong> Know which failure modes your rubrics can see — and write down, explicitly, which ones they can't. Omission will be on the blind list until you engineer it off.</li>
+            <li><strong>Log omissions as incidents.</strong> If a missing caveat reaches a user, record it with the same seriousness as a wrong statement. What gets logged gets fixed.</li>
+          </ul>
+        </div>
+        <div class="study-note">
+          <p>Experience: 9 months evaluating frontier-model outputs (accuracy, bias, reasoning quality) via Outlier and RWS Group. Regulatory references: EU AI Act Art. 14 (human oversight) and Art. 15 (accuracy, robustness and cybersecurity). Views are my own synthesis of the evaluation work, not any client's methodology.</p>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- ============ PAGER ============ -->
+  <footer class="study-pager">
+    <div class="study-pager-inner">
+      <a class="study-pager-link" href="compliance-layer.html">
+        <span class="study-pager-dir">← Previous Case Study</span>
+        <span class="study-pager-title">Building the Compliance Layer</span>
+      </a>
+      <a class="study-pager-link is-next" href="mechahitler.html">
+        <span class="study-pager-dir">First Case Study →</span>
+        <span class="study-pager-title">The MechaHitler Problem</span>
+      </a>
+      <div class="study-pager-all">
+        <a href="../index.html#work">↖ Back to all case studies</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script type="module" src="../js/case-page.js"></script>
+</body>
+</html>

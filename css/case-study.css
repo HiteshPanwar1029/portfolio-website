@@ -1,0 +1,304 @@
+/* ============================================================
+   case-study.css — layout for individual case-study pages.
+   Loaded only on case-studies/*.html, after the global sheets
+   (tokens → base → animations → sections → responsive → this).
+
+   Class prefix "study-" avoids clashing with the home page's
+   .cs-* card classes. Colours and fonts come from tokens.css.
+
+   Readability note: article copy is deliberately larger, brighter
+   and looser (17px / 1.85 / ~66ch) than the home page's card copy
+   — these pages are for reading, not scanning.
+   ============================================================ */
+
+/* ---------- Page head ---------- */
+.study-head {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  padding: 168px 44px 72px;
+  border-bottom: 1px solid rgba(var(--fg-rgb), 0.08);
+}
+.study-head-grid {
+  position: absolute; inset: 0;
+  pointer-events: none; opacity: 0.45;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(var(--signal-rgb), 0.05) 0 1px, transparent 1px 96px),
+    repeating-linear-gradient(0deg, rgba(var(--fg-rgb), 0.02) 0 1px, transparent 1px 96px);
+}
+.study-head-glow {
+  position: absolute; top: -40%; right: -12%;
+  width: 50vw; height: 50vw;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(var(--signal-rgb), 0.14), transparent 62%);
+  filter: blur(20px);
+}
+.study-head-inner { position: relative; max-width: 880px; margin: 0 auto; }
+
+.study-eyebrow {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--tan);
+  margin-bottom: 26px;
+}
+.study-eyebrow a {
+  color: var(--tan); text-decoration: none;
+  transition: color 0.25s ease;
+}
+.study-eyebrow a:hover { color: var(--accent); }
+.study-eyebrow-sep { color: rgba(var(--tan-rgb), 0.45); }
+
+.study-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+
+.study-title {
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4.4rem);
+  line-height: 1.02; letter-spacing: -0.025em;
+  color: var(--fg);
+  margin-bottom: 28px;
+  max-width: 18ch; text-wrap: balance;
+}
+.study-standfirst {
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  line-height: 1.5; letter-spacing: -0.005em;
+  color: rgba(var(--fg-rgb), 0.8);
+  max-width: 52ch; text-wrap: pretty;
+}
+
+.study-meta {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;
+  margin: 54px 0 0; padding-top: 30px;
+  border-top: 1px solid rgba(var(--fg-rgb), 0.1);
+}
+.study-meta dt {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--tan);
+  margin-bottom: 9px;
+}
+.study-meta dd {
+  font-weight: 500; font-size: 15px; line-height: 1.45;
+  color: var(--fg);
+}
+
+/* ---------- Article ---------- */
+.study-body { background: var(--bg); padding: 40px 0 20px; }
+.study-section { padding: 34px 44px; }
+.study-wrap { max-width: 720px; margin: 0 auto; }
+
+/* Numbered section kicker (01 —— THE INCIDENT). */
+.study-kicker {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 22px;
+}
+.study-kicker-num {
+  font-family: var(--font-mono);
+  font-size: 12px; letter-spacing: 0.14em;
+  color: var(--accent);
+}
+.study-kicker-rule { width: 44px; height: 1px; background: rgba(var(--tan-rgb), 0.35); }
+.study-kicker-label {
+  font-family: var(--font-mono);
+  font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--tan);
+}
+
+.study-h2 {
+  font-weight: 600;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  line-height: 1.15; letter-spacing: -0.015em;
+  color: var(--fg);
+  margin-bottom: 26px; text-wrap: pretty;
+}
+.study-h3 {
+  font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em;
+  color: var(--fg);
+  margin: 34px 0 14px;
+}
+
+.study-wrap p {
+  font-family: var(--font-body);
+  font-size: 17px; line-height: 1.85;
+  color: rgba(var(--fg-rgb), 0.84);
+  margin-bottom: 22px; text-wrap: pretty;
+}
+.study-wrap p strong { color: var(--fg); font-weight: 600; }
+.study-wrap p a,
+.study-list a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.25s ease;
+}
+.study-wrap p a:hover,
+.study-list a:hover { color: var(--accent); }
+
+/* Em-dash list. <li> may open with <strong> as a lead-in. */
+.study-list { list-style: none; margin: 0 0 26px; }
+.study-list li {
+  position: relative;
+  font-family: var(--font-body);
+  font-size: 17px; line-height: 1.75;
+  color: rgba(var(--fg-rgb), 0.84);
+  padding: 9px 0 9px 30px;
+  text-wrap: pretty;
+}
+.study-list li::before {
+  content: "—";
+  position: absolute; left: 0; top: 9px;
+  font-family: var(--font-mono);
+  color: var(--accent);
+}
+.study-list li strong { color: var(--fg); font-weight: 600; }
+
+/* Pull quote. */
+.study-quote {
+  margin: 40px 0;
+  padding: 6px 0 6px 26px;
+  border-left: 3px solid var(--accent);
+}
+.study-quote p {
+  font-family: var(--font-display);
+  font-style: italic; font-weight: 500;
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  line-height: 1.42; letter-spacing: -0.01em;
+  color: var(--fg);
+  margin: 0;
+}
+
+/* Key-takeaway / aside panel. */
+.study-callout {
+  margin: 40px 0;
+  background: var(--panel);
+  border: 1px solid rgba(var(--fg-rgb), 0.1);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+  padding: 28px 30px 16px;
+}
+.study-callout-label {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.study-callout p,
+.study-callout .study-list li { font-size: 15.5px; line-height: 1.75; }
+.study-callout .study-list { margin-bottom: 12px; }
+
+/* Data table (scrolls sideways on small screens, page never does). */
+.study-table-wrap {
+  margin: 36px 0;
+  overflow-x: auto;
+  border: 1px solid rgba(var(--fg-rgb), 0.1);
+  border-radius: 2px;
+  -webkit-overflow-scrolling: touch;
+}
+.study-table { width: 100%; min-width: 640px; border-collapse: collapse; }
+.study-table th {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  text-align: left; color: var(--tan);
+  background: var(--panel);
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(var(--fg-rgb), 0.12);
+}
+.study-table td {
+  font-family: var(--font-body);
+  font-size: 15px; line-height: 1.6;
+  color: rgba(var(--fg-rgb), 0.84);
+  vertical-align: top;
+  padding: 15px 18px;
+  border-bottom: 1px solid rgba(var(--fg-rgb), 0.06);
+}
+.study-table tr:last-child td { border-bottom: none; }
+.study-table td:first-child {
+  font-family: var(--font-display);
+  font-weight: 600; color: var(--fg);
+  white-space: nowrap;
+}
+.study-verdict {
+  font-family: var(--font-mono);
+  font-size: 12px; letter-spacing: 0.1em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* Footnote / source line. */
+.study-note {
+  margin: 30px 0 0; padding-top: 18px;
+  border-top: 1px solid rgba(var(--fg-rgb), 0.08);
+}
+.study-note p {
+  font-family: var(--font-mono);
+  font-size: 12.5px; line-height: 1.7;
+  color: var(--tan);
+}
+
+/* ---------- Prev / next pager ---------- */
+.study-pager {
+  background: var(--bg);
+  border-top: 1px solid rgba(var(--fg-rgb), 0.08);
+  padding: 70px 44px 90px;
+  margin-top: 40px;
+}
+.study-pager-inner {
+  max-width: 880px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+.study-pager-link {
+  display: flex; flex-direction: column; gap: 12px;
+  background: var(--panel);
+  border: 1px solid rgba(var(--fg-rgb), 0.1);
+  border-radius: 2px;
+  padding: 26px 28px;
+  text-decoration: none;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.study-pager-link:hover { border-color: var(--accent); transform: translateY(-3px); }
+.study-pager-link.is-next { align-items: flex-end; text-align: right; }
+.study-pager-dir {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--tan);
+}
+.study-pager-title {
+  font-weight: 600; font-size: 1.25rem;
+  line-height: 1.2; letter-spacing: -0.015em;
+  color: var(--fg);
+}
+.study-pager-all {
+  grid-column: 1 / -1;
+  margin-top: 22px; text-align: center;
+}
+.study-pager-all a {
+  font-family: var(--font-mono);
+  font-size: 13px; letter-spacing: 0.06em;
+  color: var(--accent); text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease;
+}
+.study-pager-all a:hover { border-color: var(--accent); }
+
+/* ---------- Responsive ----------
+   (Horizontal padding at ≤768/≤480 on [data-section] elements is
+   already forced by responsive.css; rules here cover the rest.) */
+@media (max-width: 900px) {
+  .study-meta { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+@media (max-width: 768px) {
+  .study-head { padding-top: 132px; padding-bottom: 54px; }
+  .study-section { padding-top: 24px; padding-bottom: 24px; }
+  .study-pager { padding: 54px 22px 70px; }
+  .study-pager-inner { grid-template-columns: 1fr; }
+  .study-pager-link.is-next { align-items: flex-start; text-align: left; }
+}
+@media (max-width: 480px) {
+  .study-head { padding-top: 120px; padding-bottom: 46px; }
+  .study-meta { gap: 20px; }
+  .study-wrap p, .study-list li { font-size: 16px; }
+  .study-pager { padding: 46px 16px 60px; }
+}

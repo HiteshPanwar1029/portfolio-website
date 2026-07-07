@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The MechaHitler Problem — Case Study · Hitesh Panwar</title>
+  <meta name="description" content="When Grok published neo-Nazi content and xAI treated it as a bug report — a virtue ethics analysis of the incident using Chun's (2017) organisational virtue framework.">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles (order matters: tokens → base → animations → sections → responsive → case-study) -->
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/sections.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+<div class="site">
+
+  <!-- scroll progress -->
+  <div class="progress" aria-hidden="true"></div>
+  <!-- cursor glow -->
+  <div class="glow" aria-hidden="true"></div>
+  <!-- active section indicator -->
+  <div class="indicator" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Hitesh Panwar<span class="accent-text">.</span></a>
+      <div class="nav-links">
+        <a href="../index.html#work" class="nav-link">← All Case Studies</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- mobile fullscreen menu -->
+  <div class="menu" id="mobile-menu">
+    <a href="../index.html#work" class="menu-link">All Case Studies</a>
+    <a href="../index.html#about" class="menu-link">About</a>
+    <a href="../index.html#contact" class="menu-link">Contact</a>
+  </div>
+
+  <!-- ============ PAGE HEAD ============ -->
+  <header class="study-head" data-section data-label="OVERVIEW">
+    <div class="study-head-grid" aria-hidden="true"></div>
+    <div class="study-head-glow" aria-hidden="true"></div>
+    <div class="study-head-inner">
+      <div class="study-eyebrow reveal-up" data-reveal="up">
+        <a href="../index.html#work">Case Studies</a>
+        <span class="study-eyebrow-sep" aria-hidden="true">/</span>
+        <span>01 · 03</span>
+      </div>
+      <div class="study-tags reveal-up" data-reveal="up" data-delay="80">
+        <span class="chip">AI Ethics</span>
+        <span class="chip">Virtue Ethics</span>
+        <span class="chip">Corporate Accountability</span>
+      </div>
+      <h1 class="study-title reveal-up" data-reveal="up" data-delay="140">The MechaHitler Problem</h1>
+      <p class="study-standfirst reveal-up" data-reveal="up" data-delay="220">When Grok published neo-Nazi content and xAI answered with a bug report, the interesting question wasn't what failed — it was what the response revealed about the company's character. A virtue ethics analysis.</p>
+      <dl class="study-meta reveal-up" data-reveal="up" data-delay="300">
+        <div>
+          <dt>Domain</dt>
+          <dd>AI Ethics &amp; Corporate Accountability</dd>
+        </div>
+        <div>
+          <dt>Lens</dt>
+          <dd>Chun (2017) organisational virtue ethics</dd>
+        </div>
+        <div>
+          <dt>Subject</dt>
+          <dd>xAI / Grok incident, July 2025</dd>
+        </div>
+        <div>
+          <dt>Format</dt>
+          <dd>Academic case analysis, MSc (UCD Smurfit)</dd>
+        </div>
+      </dl>
+    </div>
+  </header>
+
+  <!-- ============ ARTICLE ============ -->
+  <article class="study-body">
+
+    <section class="study-section" data-section data-label="THE INCIDENT">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">01</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Incident</span>
+        </div>
+        <h2 class="study-h2">A frontier model praised Hitler in public, for hours.</h2>
+        <p>In July 2025, xAI shipped a change to Grok's system prompt encouraging the model not to shy away from "politically incorrect" claims. Within days, Grok's public X account was generating antisemitic content: praising Adolf Hitler, invoking antisemitic tropes about Jewish surnames, and — in the detail that named this case — referring to itself as <strong>"MechaHitler."</strong></p>
+        <p>The outputs were not hidden in private chats. They were published, screenshotted, and amplified on one of the largest platforms in the world, and they stayed up for hours. xAI eventually deleted the posts, temporarily restricted Grok's text replies, and published an explanation attributing the behaviour to an update in an upstream code path that had made the model susceptible to extremist user content.</p>
+        <p>Roughly a day later, xAI launched Grok 4 on schedule.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="THE RESPONSE">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">02</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Corporate Response</span>
+        </div>
+        <h2 class="study-h2">The apology described the system as the actor and the company as a bystander.</h2>
+        <p>Read xAI's public statements closely and a pattern emerges. The subject of every sentence is the model or the code: <em>a code path was updated, the model became susceptible, posts were removed</em>. No person decided to ship an unreviewed prompt change to a system with a built-in publishing channel. No person owned the hours of latency before intervention. No independent review was announced. And the flagship launch went ahead as planned.</p>
+        <div class="study-quote">
+          <p>"The bug-report framing converts a question of character into a question of engineering — and engineering questions don't require anyone to be sorry."</p>
+        </div>
+        <p>This is precisely the move a compliance-only view of AI governance permits. If the test is <em>did we break a rule?</em>, then a fix, a deletion, and a technical post-mortem close the incident. The reason the episode is worth an academic case study is that it exposes what rule-based analysis cannot see — which is where virtue ethics earns its place.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="THE FRAMEWORK">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">03</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Framework</span>
+        </div>
+        <h2 class="study-h2">Chun's organisational virtue: companies have character, and it's measurable.</h2>
+        <p>Rosa Chun's work on organisational virtue ethics argues that organisations, like people, display <strong>ethical character</strong> — stable dispositions revealed through patterns of behaviour, not through mission statements. Her framework operationalises this as six measurable virtue dimensions: <strong>integrity, empathy, warmth, courage, conscientiousness, and zeal</strong>.</p>
+        <p>The virtue lens asks a different question from deontological or consequentialist analysis. Not <em>was a rule violated?</em> or <em>did harm outweigh benefit?</em>, but: <strong>what does this pattern of choices reveal about who the organisation is?</strong> That question fits frontier AI unusually well, for two reasons.</p>
+        <ul class="study-list">
+          <li><strong>Rules lag capability.</strong> When a company operates at the frontier, most of its consequential choices are made in territory no regulation has reached yet. Character is the only governance that exists at the moment of decision.</li>
+          <li><strong>Harm is emergent.</strong> Nobody at xAI intended antisemitic output. Intent-based blame misses the point; disposition-based analysis — what the company was <em>careless about</em>, what it <em>prioritised</em> — does not.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="THE ANALYSIS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">04</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Analysis</span>
+        </div>
+        <h2 class="study-h2">Six virtues, applied to what xAI actually did.</h2>
+        <p>Scoring the incident against Chun's six dimensions makes the character question concrete. The evidence base is the company's observable conduct: the shipped prompt change, the response latency, the language of the statements, and the launch decision.</p>
+        <div class="study-table-wrap" tabindex="0">
+          <table class="study-table">
+            <thead>
+              <tr>
+                <th scope="col">Virtue</th>
+                <th scope="col">What it asks</th>
+                <th scope="col">What xAI showed</th>
+                <th scope="col">Reading</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Integrity</td>
+                <td>Do actions match stated values?</td>
+                <td>A "truth-seeking" mission, operationalised as an instruction to court political incorrectness — shipped without visible review.</td>
+                <td><span class="study-verdict">CONTRADICTED</span></td>
+              </tr>
+              <tr>
+                <td>Empathy</td>
+                <td>Are affected parties seen and acknowledged?</td>
+                <td>Statements addressed the malfunction. The communities targeted by the content were not directly addressed.</td>
+                <td><span class="study-verdict">ABSENT</span></td>
+              </tr>
+              <tr>
+                <td>Warmth</td>
+                <td>Is the tone of engagement humane?</td>
+                <td>Technical, minimising language throughout; the register of a service outage, not a harm.</td>
+                <td><span class="study-verdict">ABSENT</span></td>
+              </tr>
+              <tr>
+                <td>Courage</td>
+                <td>Will the firm bear costs to do right?</td>
+                <td>"Edginess" was framed as courage. Actual courage — delaying the Grok 4 launch to review — was declined.</td>
+                <td><span class="study-verdict">INVERTED</span></td>
+              </tr>
+              <tr>
+                <td>Conscientiousness</td>
+                <td>Is care taken before acting?</td>
+                <td>No evidence of pre-deployment evaluation gates on a prompt change to a publicly publishing system.</td>
+                <td><span class="study-verdict">FAILED</span></td>
+              </tr>
+              <tr>
+                <td>Zeal</td>
+                <td>Where does the energy actually go?</td>
+                <td>Enormous zeal for shipping capability; the safety response was reactive and minimal. Zeal existed — it was pointed elsewhere.</td>
+                <td><span class="study-verdict">MISDIRECTED</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The pattern matters more than any single row. A company can fail one virtue under pressure and remain a fundamentally serious actor. Failing all six in a single episode, in mutually reinforcing ways, is what Chun's framework would call a <strong>character finding</strong> — and character findings predict future behaviour in a way that incident post-mortems do not.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="GOVERNANCE">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">05</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Counterfactual</span>
+        </div>
+        <h2 class="study-h2">What governance would have looked like, concretely.</h2>
+        <p>The value of the virtue analysis is that each failed dimension maps to a control that a governance function could actually run. This incident was preventable with machinery that already exists in mature risk organisations:</p>
+        <ul class="study-list">
+          <li><strong>Prompt changes as governed releases.</strong> A system prompt on a model with a public publishing channel is production code with regulatory surface. It needs review, staged rollout, and a documented approver — a 1LOD/2LOD split, not a hotfix culture.</li>
+          <li><strong>Adversarial evaluation gates.</strong> A red-team suite for extremist, hateful, and persona-hijack content, run on every behavioural change, with launch-blocking authority.</li>
+          <li><strong>A named kill-switch owner.</strong> Hours of live antisemitic output means nobody had both the monitoring and the authority to stop publishing. That is an org-chart failure, not a model failure.</li>
+          <li><strong>Incident disclosure norms.</strong> Under the EU AI Act's general-purpose AI obligations, providers of models with systemic risk face exactly these duties: model evaluation, adversarial testing, incident tracking and reporting. The regulation is, in effect, codifying conscientiousness.</li>
+        </ul>
+        <div class="study-callout">
+          <div class="study-callout-label">Key Takeaways</div>
+          <ul class="study-list">
+            <li><strong>Character is a leading indicator; compliance is a lagging one.</strong> The virtues a company displays under pressure predict its next incident better than its policy documents.</li>
+            <li><strong>"It was a bug" is an accountability decision,</strong> not a technical description. Watch who the subject of the apology's sentences is.</li>
+            <li><strong>Every virtue maps to a control.</strong> Virtue ethics isn't soft — it generates a concrete audit agenda: release governance, eval gates, kill-switch ownership, disclosure norms.</li>
+          </ul>
+        </div>
+        <div class="study-note">
+          <p>Framework: Chun, R. — organisational virtue ethics; six-dimension virtue character scale (integrity, empathy, warmth, courage, conscientiousness, zeal). Incident details as publicly reported, July 2025. Analysis written as part of my MSc Management coursework at UCD Smurfit.</p>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- ============ PAGER ============ -->
+  <footer class="study-pager">
+    <div class="study-pager-inner">
+      <a class="study-pager-link is-next" href="compliance-layer.html" style="grid-column: 2;">
+        <span class="study-pager-dir">Next Case Study →</span>
+        <span class="study-pager-title">Building the Compliance Layer</span>
+      </a>
+      <div class="study-pager-all">
+        <a href="../index.html#work">↖ Back to all case studies</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script type="module" src="../js/case-page.js"></script>
+</body>
+</html>

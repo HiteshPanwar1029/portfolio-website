@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building the Compliance Layer — Case Study · Hitesh Panwar</title>
+  <meta name="description" content="Designing and building a standalone AI compliance learning app — DPIA methodology, EU AI Act risk classification, and governance frameworks — with no build tools, no backend, and no API costs.">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles (order matters: tokens → base → animations → sections → responsive → case-study) -->
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/sections.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+<div class="site">
+
+  <!-- scroll progress -->
+  <div class="progress" aria-hidden="true"></div>
+  <!-- cursor glow -->
+  <div class="glow" aria-hidden="true"></div>
+  <!-- active section indicator -->
+  <div class="indicator" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Hitesh Panwar<span class="accent-text">.</span></a>
+      <div class="nav-links">
+        <a href="../index.html#work" class="nav-link">← All Case Studies</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- mobile fullscreen menu -->
+  <div class="menu" id="mobile-menu">
+    <a href="../index.html#work" class="menu-link">All Case Studies</a>
+    <a href="../index.html#about" class="menu-link">About</a>
+    <a href="../index.html#contact" class="menu-link">Contact</a>
+  </div>
+
+  <!-- ============ PAGE HEAD ============ -->
+  <header class="study-head" data-section data-label="OVERVIEW">
+    <div class="study-head-grid" aria-hidden="true"></div>
+    <div class="study-head-glow" aria-hidden="true"></div>
+    <div class="study-head-inner">
+      <div class="study-eyebrow reveal-up" data-reveal="up">
+        <a href="../index.html#work">Case Studies</a>
+        <span class="study-eyebrow-sep" aria-hidden="true">/</span>
+        <span>02 · 03</span>
+      </div>
+      <div class="study-tags reveal-up" data-reveal="up" data-delay="80">
+        <span class="chip">EU AI Act</span>
+        <span class="chip">GDPR</span>
+        <span class="chip">Interactive Learning</span>
+      </div>
+      <h1 class="study-title reveal-up" data-reveal="up" data-delay="140">Building the Compliance Layer</h1>
+      <p class="study-standfirst reveal-up" data-reveal="up" data-delay="220">A standalone web app that teaches DPIA methodology, EU AI Act risk classification, and governance frameworks by making you <em>do</em> them — built with no build tools, no backend, and nothing to pay for.</p>
+      <dl class="study-meta reveal-up" data-reveal="up" data-delay="300">
+        <div>
+          <dt>Role</dt>
+          <dd>Design, content &amp; build (solo)</dd>
+        </div>
+        <div>
+          <dt>Stack</dt>
+          <dd>HTML · CSS · Vanilla JS</dd>
+        </div>
+        <div>
+          <dt>Dependencies</dt>
+          <dd>None — no build step, no backend, no API keys</dd>
+        </div>
+        <div>
+          <dt>Cost to run</dt>
+          <dd>€0</dd>
+        </div>
+      </dl>
+    </div>
+  </header>
+
+  <!-- ============ ARTICLE ============ -->
+  <article class="study-body">
+
+    <section class="study-section" data-section data-label="THE PROBLEM">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">01</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Problem</span>
+        </div>
+        <h2 class="study-h2">Compliance knowledge lives in PDFs. Compliance skill doesn't.</h2>
+        <p>Everything you need to know about the EU AI Act and GDPR is written down — in the regulations themselves, in EDPB guidance, in a thousand law-firm explainers. And yet the practical skills of the field — <strong>classifying a real system into a risk tier, running a DPIA that would survive scrutiny</strong> — are learned almost entirely on the job, because reading about a decision procedure is nothing like executing one.</p>
+        <p>I wanted a tool that closed that gap for myself first: something that would put a concrete AI system in front of me and force a defensible classification, step by step, the way the work actually happens. When I couldn't find one that wasn't locked inside expensive corporate training, I built it.</p>
+        <p>There was a second motive: <strong>encoding the law is the best way to learn it.</strong> You cannot turn Annex III into a decision tree without discovering exactly where your own understanding is fuzzy — and where the regulation itself is.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="CONSTRAINTS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">02</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">Constraints as Design</span>
+        </div>
+        <h2 class="study-h2">Three deliberate constraints shaped every decision.</h2>
+        <ul class="study-list">
+          <li><strong>No build tools.</strong> Open <em>index.html</em> and it runs. No node_modules, no bundler, no framework version that will rot in eighteen months. A compliance learning tool should outlive its own tooling.</li>
+          <li><strong>No API costs.</strong> All logic is client-side. Nothing meters usage, so it can be shared with a classmate, a study group, or a whole cohort without anyone owing anyone money.</li>
+          <li><strong>No backend.</strong> Progress lives in <em>localStorage</em>. There is no account, no tracking, and — fittingly for a privacy-focused tool — no personal data leaving the device. The app practises the data minimisation it teaches.</li>
+        </ul>
+        <div class="study-quote">
+          <p>"A tool that teaches GDPR should be the one thing in your browser that provably isn't collecting anything."</p>
+        </div>
+        <p>The constraints weren't ascetic for the sake of it. They forced the interesting work into the only place it could live: <strong>the content model and the interaction design</strong>, rather than infrastructure.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="THE MODULES">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">03</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">What's Inside</span>
+        </div>
+        <h2 class="study-h2">Three modules, each built around doing rather than reading.</h2>
+        <h3 class="study-h3">Risk classification trainer</h3>
+        <p>The app presents realistic AI system descriptions — a CV-screening model, an emotion-recognition tool in a call centre, a chatbot with a disclosure banner — and asks you to place each into the EU AI Act's tiers: <strong>prohibited, high-risk, limited-risk, or minimal-risk</strong>. You commit to an answer before you see the reasoning, which walks through the relevant Article 5 prohibitions and Annex III categories and explains why plausible wrong answers are wrong.</p>
+        <h3 class="study-h3">DPIA walkthrough</h3>
+        <p>A step-by-step Data Protection Impact Assessment built on the Article 35 GDPR structure: describing the processing, assessing <strong>necessity and proportionality</strong>, mapping risks to rights and freedoms, and selecting mitigations. Each step shows what a weak answer and a strong answer look like side by side — the difference between a DPIA that is paperwork and one that is analysis.</p>
+        <h3 class="study-h3">Governance frameworks reference</h3>
+        <p>A working reference that connects the regulatory texts to operating models: the <strong>three-lines-of-defence</strong> structure (who owns risk vs. who oversees it), how EU AI Act obligations distribute across provider and deployer roles, and how the NIST AI RMF's govern–map–measure–manage cycle maps onto Act requirements.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="THE BUILD">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">04</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">How It's Built</span>
+        </div>
+        <h2 class="study-h2">Boring technology, deliberately.</h2>
+        <p>The architecture is as small as the constraints demand. Scenario content — systems, correct classifications, reasoning chains, distractor explanations — lives in <strong>plain JSON, separated from all presentation logic</strong>, so adding a scenario is a content task, not a programming task. A small vanilla-JS engine renders scenarios, scores answers, and persists progress to localStorage. Semantic HTML and full keyboard operability came from building the interaction as forms and buttons rather than a canvas of divs.</p>
+        <p>The separation of content from engine turned out to be the most important line in the codebase: it means the scenario library can grow — or be reviewed by someone who knows law and not JavaScript — without touching anything that executes.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="LESSONS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">05</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">What I Learned</span>
+        </div>
+        <h2 class="study-h2">Writing the scenarios was harder than writing the code.</h2>
+        <p>Every scenario needs a <strong>defensible</strong> answer — one I could argue against a lawyer's objection — and producing them taught me more about the AI Act than any summary I'd read. The borderline cases are borderline in the regulation itself: systems that hover between limited and high risk depending on facts the Act's definitions don't cleanly resolve. Encoding law into decision trees is a rigorous audit of both the law and the encoder.</p>
+        <div class="study-callout">
+          <div class="study-callout-label">Key Takeaways</div>
+          <ul class="study-list">
+            <li><strong>Interactive beats declarative for regulatory training.</strong> Committing to an answer before seeing the reasoning is where the learning happens.</li>
+            <li><strong>Constraints compound.</strong> No build, no backend, no cost made the app durable, forkable, and private — properties a compliance tool should have anyway.</li>
+            <li><strong>The gaps you find encoding the law are the gaps practitioners fight about.</strong> Ambiguity that survives translation into a decision tree is ambiguity clients will pay to have navigated.</li>
+          </ul>
+        </div>
+        <div class="study-note">
+          <p>Planned next: a general-purpose AI module covering the Act's GPAI obligations, and a scenario pack on transparency duties for deployers. The app is static — it deploys anywhere that serves files.</p>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- ============ PAGER ============ -->
+  <footer class="study-pager">
+    <div class="study-pager-inner">
+      <a class="study-pager-link" href="mechahitler.html">
+        <span class="study-pager-dir">← Previous Case Study</span>
+        <span class="study-pager-title">The MechaHitler Problem</span>
+      </a>
+      <a class="study-pager-link is-next" href="evaluating-models.html">
+        <span class="study-pager-dir">Next Case Study →</span>
+        <span class="study-pager-title">Evaluating What Models Don't Say</span>
+      </a>
+      <div class="study-pager-all">
+        <a href="../index.html#work">↖ Back to all case studies</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script type="module" src="../js/case-page.js"></script>
+</body>
+</html>
