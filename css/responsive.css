@@ -2,6 +2,10 @@
    responsive.css — all media queries, consolidated.
    Breakpoints mirror --bp-lg/md/sm in tokens.css (media queries
    can't read custom properties, so the literals are used here).
+
+   The horizontal gutter is a token: redefining --pad-x here
+   re-aligns EVERY section, the nav, the hero and the rails at
+   once — no per-section padding overrides, no drift.
    ============================================================ */
 
 /* Defaults toggled by the queries below. */
@@ -22,32 +26,38 @@
   }
   .cs-card { scroll-snap-align: center !important; }
   .proj-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .gov-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
 }
 
-/* ---- ≤768px : mobile (nav → hamburger, SVG → card fallback) ---- */
+/* ---- ≤768px : mobile (nav → hamburger, SVGs → fallbacks) ---- */
 @media (max-width: 768px) {
+  :root { --pad-x: 22px; }
+
   .nav-links { display: none !important; }
   .burger { display: flex !important; }
+
+  /* Interactive SVGs collapse to tappable lists. */
   .nn-svg { display: none !important; }
   .nn-mobile { display: block !important; }
-
-  .nav-inner { padding-left: 22px !important; padding-right: 22px !important; }
-  .hero-main { padding-left: 22px !important; padding-right: 22px !important; }
-  [data-section] { padding-left: 22px !important; padding-right: 22px !important; }
+  .jchart { display: none !important; }
+  .jsteps { display: flex !important; }
 
   .hero-name { font-size: clamp(40px, 12vw, 72px) !important; }
   .mq { font-size: clamp(1.5rem, 8vw, 3rem) !important; }
   .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
   .about-quote { font-size: clamp(36px, 9vw, 72px) !important; }
-  .stats-grid {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 46px !important;
-  }
-  .stat-num { font-size: clamp(48px, 15vw, 80px) !important; }
   .skills-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .skills-stats { flex-direction: column !important; }
+  .sk-stat { border-right: none !important; border-bottom: 1px solid rgba(var(--fg-rgb), 0.08); }
+  .sk-stat:last-child { border-bottom: none; }
   .proj-grid { grid-template-columns: 1fr !important; }
+  .jdetail { padding: 24px 20px !important; }
+  .jdetail-foot { flex-direction: column; align-items: flex-start; }
+  .gov-detail { padding: 26px 22px !important; min-height: 0 !important; }
+  .gov-tier--0 { width: 55% !important; }
+  .gov-tier--1 { width: 70% !important; }
+  .gov-tier--2 { width: 85% !important; }
+  .consent { left: 12px !important; right: 12px !important; bottom: 12px !important; }
   .contact-h { font-size: clamp(40px, 11vw, 72px) !important; }
   .contact-btns {
     flex-direction: column !important;
@@ -64,14 +74,9 @@
     justify-content: center;
   }
   .cs-card { width: 85vw !important; height: auto !important; min-height: 62vh; }
-  .cs-rail { padding-left: 22px !important; padding-right: 22px !important; }
 }
 
 /* ---- ≤480px : tight phones ---- */
 @media (max-width: 480px) {
-  .hero-main { padding-left: 16px !important; padding-right: 16px !important; }
-  [data-section] { padding-left: 16px !important; padding-right: 16px !important; }
-  .nav-inner { padding-left: 16px !important; padding-right: 16px !important; }
-  .cs-rail { padding-left: 16px !important; padding-right: 16px !important; }
-  .indicator { left: 16px !important; }
+  :root { --pad-x: 16px; }
 }

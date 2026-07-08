@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CIPP/E Study Companion — Project · Hitesh Panwar</title>
+  <meta name="description" content="CIPP/E Study Companion — an offline-first PWA built with Claude for IAPP CIPP/E exam prep. Spaced-repetition GDPR drills, installable on a phone, deployed via GitHub Pages.">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles (order matters: tokens → base → animations → sections → responsive → case-study → project-page) -->
+  <link rel="stylesheet" href="../css/tokens.css?v=3">
+  <link rel="stylesheet" href="../css/base.css?v=3">
+  <link rel="stylesheet" href="../css/animations.css?v=3">
+  <link rel="stylesheet" href="../css/sections.css?v=3">
+  <link rel="stylesheet" href="../css/responsive.css?v=3">
+  <link rel="stylesheet" href="../css/case-study.css?v=3">
+  <link rel="stylesheet" href="../css/project-page.css?v=3">
+</head>
+<body>
+<div class="site">
+
+  <!-- scroll progress -->
+  <div class="progress" aria-hidden="true"></div>
+  <!-- cursor glow -->
+  <div class="glow" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Hitesh Panwar<span class="accent-text">.</span></a>
+      <div class="nav-links">
+        <a href="../index.html#projects" class="nav-link">← All Projects</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- mobile fullscreen menu -->
+  <div class="menu" id="mobile-menu">
+    <a href="../index.html#projects" class="menu-link">All Projects</a>
+    <a href="../index.html#about" class="menu-link">About</a>
+    <a href="../index.html#contact" class="menu-link">Contact</a>
+  </div>
+
+  <!-- ============ PAGE HEAD ============ -->
+  <header class="study-head" data-section data-label="OVERVIEW">
+    <div class="study-head-grid" aria-hidden="true"></div>
+    <div class="study-head-glow" aria-hidden="true"></div>
+    <div class="study-head-inner">
+      <div class="study-eyebrow reveal-up" data-reveal="up">
+        <a href="../index.html#projects">Projects</a>
+        <span class="study-eyebrow-sep" aria-hidden="true">/</span>
+        <span>02 · 03</span>
+      </div>
+      <div class="study-tags reveal-up" data-reveal="up" data-delay="80">
+        <span class="chip">GDPR</span>
+        <span class="chip">PWA</span>
+        <span class="chip">Spaced Repetition</span>
+      </div>
+      <h1 class="study-title reveal-up" data-reveal="up" data-delay="140">CIPP/E Study Companion — the exam in my pocket.</h1>
+      <p class="study-standfirst reveal-up" data-reveal="up" data-delay="220">An offline-first study app that turns dead minutes on the Luas into GDPR drill time. Built with Claude, deployed on GitHub Pages, installed on my home screen — and opened every day.</p>
+      <dl class="study-meta reveal-up" data-reveal="up" data-delay="300">
+        <div>
+          <dt>Role</dt>
+          <dd>Design, content &amp; build (with Claude)</dd>
+        </div>
+        <div>
+          <dt>Stack</dt>
+          <dd>JS PWA · service worker · GitHub Pages + Actions</dd>
+        </div>
+        <div>
+          <dt>Purpose</dt>
+          <dd>IAPP CIPP/E certification prep</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>In daily use, on my phone</dd>
+        </div>
+      </dl>
+    </div>
+  </header>
+
+  <!-- ============ ARTICLE ============ -->
+  <article class="study-body">
+
+    <section class="study-section" data-section data-label="SCREENS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">01</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Product</span>
+        </div>
+        <h2 class="study-h2">A study tool that fits in a commute.</h2>
+        <div class="shots">
+          <figure class="shot shot--wide">
+            <div class="shot-chrome" aria-hidden="true">
+              <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+              <span class="shot-url">cippe-companion / drill</span>
+            </div>
+            <div class="shot-body">
+              <img src="../assets/projects/cippe-01.png" alt="CIPP/E Study Companion drill screen with spaced-repetition queue" onerror="this.closest('.shot').classList.add('is-empty')">
+              <div class="shot-ph" aria-hidden="true">
+                <span class="shot-ph-badge">Screenshot Slot</span>
+                <span class="shot-ph-text">Drop <code>cippe-01.png</code> into <code>/assets/projects</code> and it appears here automatically.</span>
+              </div>
+            </div>
+            <figcaption class="shot-caption"><strong>Drill</strong> — the spaced-repetition queue, with due-today indicators.</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="shot-chrome" aria-hidden="true">
+              <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+              <span class="shot-url">cippe-companion / modules</span>
+            </div>
+            <div class="shot-body">
+              <img src="../assets/projects/cippe-02.png" alt="CIPP/E Study Companion modules and mobile tab bar" onerror="this.closest('.shot').classList.add('is-empty')">
+              <div class="shot-ph" aria-hidden="true">
+                <span class="shot-ph-badge">Screenshot Slot</span>
+                <span class="shot-ph-text">Drop <code>cippe-02.png</code> into <code>/assets/projects</code>.</span>
+              </div>
+            </div>
+            <figcaption class="shot-caption"><strong>Modules</strong> — GDPR topic areas behind a thumb-sized tab bar.</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="shot-chrome" aria-hidden="true">
+              <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+              <span class="shot-url">cippe-companion / progress</span>
+            </div>
+            <div class="shot-body">
+              <img src="../assets/projects/cippe-03.png" alt="CIPP/E Study Companion progress view" onerror="this.closest('.shot').classList.add('is-empty')">
+              <div class="shot-ph" aria-hidden="true">
+                <span class="shot-ph-badge">Screenshot Slot</span>
+                <span class="shot-ph-text">Drop <code>cippe-03.png</code> into <code>/assets/projects</code>.</span>
+              </div>
+            </div>
+            <figcaption class="shot-caption"><strong>Progress</strong> — what's mastered, what's due, what's weak.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="THE PROBLEM">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">02</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Problem</span>
+        </div>
+        <h2 class="study-h2">A certification exam doesn't care that you're also doing an MSc.</h2>
+        <p>The CIPP/E is Europe's benchmark privacy certification — dense with articles, recitals, case law and edge cases — and I'm preparing for it alongside a full MSc and evaluation work. What I didn't have was two-hour textbook sessions. What I did have was <strong>fragments</strong>: ten minutes on the Luas, five in a queue, twenty before a lecture.</p>
+        <p>So the tool had to meet the time where it lived: high-frequency micro-study, on the phone, offline, with the app deciding what to review next so I never spend attention on scheduling.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="WHAT IT DOES">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">03</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">What It Does</span>
+        </div>
+        <h2 class="study-h2">Spaced repetition, engineered for thumbs.</h2>
+        <ul class="study-list">
+          <li><strong>Spaced-repetition drills.</strong> Every GDPR concept is a card with a review schedule; the Drill tab shows a "due" dot so the day's queue is one tap away. The algorithm decides what I see — I just answer.</li>
+          <li><strong>Installable PWA.</strong> Added to the home screen it behaves like a native app: full-screen, instant, with a proper tab bar (58px tap targets — sized for thumbs, not cursors).</li>
+          <li><strong>Offline-first.</strong> A service worker caches the whole app, so it works in a tunnel, on a plane, or with no signal — which is exactly where study minutes hide.</li>
+          <li><strong>Zero-cost pipeline.</strong> Built and deployed through GitHub Pages with Actions; push to redeploy, auto-updates on next open.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="BUILT WITH CLAUDE">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">04</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">Built With Claude</span>
+        </div>
+        <h2 class="study-h2">Iterated like a product, not a side project.</h2>
+        <p>Claude and I built this in tight loops: describe the friction, ship the fix, test it on the actual phone, repeat. The mobile tab bar alone went through several rounds — icons, label sizes, tap-target heights — because a study app that's 5% annoying gets opened 100% less.</p>
+        <p>The best lesson came from a bug that wasn't a bug: after one update, my phone kept showing the old version. Diagnosis: the <strong>service worker's cache</strong>, doing its job too well. Working through cache-busting, update flows and deploy-vs-cache diagnostics with Claude taught me more about how PWAs really behave in the field than any tutorial — and it's the kind of failure mode (stale model, stale policy, stale cache) that governance work is full of.</p>
+        <div class="study-quote">
+          <p>"Encoding the law is the fastest way to learn it — a flashcard you wrote is worth ten you downloaded."</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="TECH & SKILLS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">05</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">Tech &amp; Skills</span>
+        </div>
+        <h2 class="study-h2">What it's made of — and what it made of me.</h2>
+        <div class="proj-tech">
+          <div>
+            <div class="proj-tech-col-label">Technology</div>
+            <div class="proj-tech-chips">
+              <span class="chip">Progressive Web App</span>
+              <span class="chip">Service worker caching</span>
+              <span class="chip">GitHub Pages + Actions CI</span>
+              <span class="chip">Responsive mobile UI</span>
+            </div>
+          </div>
+          <div>
+            <div class="proj-tech-col-label">Skills Exercised</div>
+            <div class="proj-tech-chips">
+              <span class="chip">GDPR domain modelling</span>
+              <span class="chip">Spaced-repetition design</span>
+              <span class="chip">Mobile UX &amp; accessibility</span>
+              <span class="chip">Deploy &amp; cache debugging</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="OUTCOME">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">06</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">Outcome</span>
+        </div>
+        <h2 class="study-h2">Study stopped being an event and became a habit.</h2>
+        <div class="proj-outcomes">
+          <div class="proj-outcome">
+            <div class="proj-outcome-num"><span data-count="365">365</span></div>
+            <div class="proj-outcome-label">Days a year it's within reach — offline included</div>
+          </div>
+          <div class="proj-outcome">
+            <div class="proj-outcome-num"><span data-count="58">58</span><span class="accent-text">px</span></div>
+            <div class="proj-outcome-label">Tap targets — details decide daily use</div>
+          </div>
+          <div class="proj-outcome">
+            <div class="proj-outcome-num">€<span data-count="0">0</span></div>
+            <div class="proj-outcome-label">Hosting, build and run cost</div>
+          </div>
+        </div>
+        <p>The real outcome is upstream of the exam: writing and drilling every card forced me to <strong>argue with the GDPR text itself</strong> — which articles interlock, where the edge cases live, what the regulator actually expects. That fluency feeds straight into the AI governance work this whole site is about.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="LEARNINGS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">07</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">What I Learned</span>
+        </div>
+        <h2 class="study-h2">Tools get used for small reasons, and abandoned for smaller ones.</h2>
+        <div class="study-callout">
+          <div class="study-callout-label">Key Takeaways</div>
+          <ul class="study-list">
+            <li><strong>Friction is the real feature flag.</strong> Offline support and thumb-sized targets did more for study consistency than any content improvement.</li>
+            <li><strong>Caches are policies.</strong> The stale-service-worker episode is the same problem as a stale model card or an outdated DPIA: what's deployed and what's documented drift apart unless you engineer the update path.</li>
+            <li><strong>Teaching a machine the law teaches you the law.</strong> Same lesson as my compliance app, confirmed twice now.</li>
+          </ul>
+        </div>
+        <div class="study-note">
+          <p>Built as part of my CIPP/E preparation — see <a href="../index.html#journey">the trajectory</a> for where the certification fits in the larger plan.</p>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- ============ PAGER ============ -->
+  <footer class="study-pager">
+    <div class="study-pager-inner">
+      <a class="study-pager-link" href="jobpilot.html">
+        <span class="study-pager-dir">← Previous Project</span>
+        <span class="study-pager-title">JobPilot</span>
+      </a>
+      <a class="study-pager-link is-next" href="compliance-app.html">
+        <span class="study-pager-dir">Next Project →</span>
+        <span class="study-pager-title">AI Compliance Learning App</span>
+      </a>
+      <div class="study-pager-all">
+        <a href="../index.html#projects">↖ Back to all projects</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script type="module" src="../js/case-page.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JobPilot — Project · Hitesh Panwar</title>
+  <meta name="description" content="JobPilot — an AI job-search command center built with Claude. Agents scan the Irish market daily, score every role against my profile, and feed a live application pipeline.">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles (order matters: tokens → base → animations → sections → responsive → case-study → project-page) -->
+  <link rel="stylesheet" href="../css/tokens.css?v=3">
+  <link rel="stylesheet" href="../css/base.css?v=3">
+  <link rel="stylesheet" href="../css/animations.css?v=3">
+  <link rel="stylesheet" href="../css/sections.css?v=3">
+  <link rel="stylesheet" href="../css/responsive.css?v=3">
+  <link rel="stylesheet" href="../css/case-study.css?v=3">
+  <link rel="stylesheet" href="../css/project-page.css?v=3">
+</head>
+<body>
+<div class="site">
+
+  <!-- scroll progress -->
+  <div class="progress" aria-hidden="true"></div>
+  <!-- cursor glow -->
+  <div class="glow" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Hitesh Panwar<span class="accent-text">.</span></a>
+      <div class="nav-links">
+        <a href="../index.html#projects" class="nav-link">← All Projects</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- mobile fullscreen menu -->
+  <div class="menu" id="mobile-menu">
+    <a href="../index.html#projects" class="menu-link">All Projects</a>
+    <a href="../index.html#about" class="menu-link">About</a>
+    <a href="../index.html#contact" class="menu-link">Contact</a>
+  </div>
+
+  <!-- ============ PAGE HEAD ============ -->
+  <header class="study-head" data-section data-label="OVERVIEW">
+    <div class="study-head-grid" aria-hidden="true"></div>
+    <div class="study-head-glow" aria-hidden="true"></div>
+    <div class="study-head-inner">
+      <div class="study-eyebrow reveal-up" data-reveal="up">
+        <a href="../index.html#projects">Projects</a>
+        <span class="study-eyebrow-sep" aria-hidden="true">/</span>
+        <span>01 · 03</span>
+      </div>
+      <div class="study-tags reveal-up" data-reveal="up" data-delay="80">
+        <span class="chip">Claude Agents</span>
+        <span class="chip">Scheduled Automation</span>
+        <span class="chip">Job Intelligence</span>
+      </div>
+      <h1 class="study-title reveal-up" data-reveal="up" data-delay="140">JobPilot — the job hunt, on autopilot.</h1>
+      <p class="study-standfirst reveal-up" data-reveal="up" data-delay="220">While other candidates refresh job boards, an agent does it for me. JobPilot scans the Irish market every day, scores each role against my profile, and tells me exactly where to aim — before I've had breakfast.</p>
+      <dl class="study-meta reveal-up" data-reveal="up" data-delay="300">
+        <div>
+          <dt>Role</dt>
+          <dd>Product design &amp; build (with Claude)</dd>
+        </div>
+        <div>
+          <dt>Stack</dt>
+          <dd>Vanilla JS dashboard · JSON data store · Claude agents</dd>
+        </div>
+        <div>
+          <dt>Cadence</dt>
+          <dd>Runs daily, unattended, on a schedule</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>In daily use — actively evolving</dd>
+        </div>
+      </dl>
+    </div>
+  </header>
+
+  <!-- ============ ARTICLE ============ -->
+  <article class="study-body">
+
+    <section class="study-section" data-section data-label="SCREENS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">01</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Product</span>
+        </div>
+        <h2 class="study-h2">One dashboard. The entire job hunt.</h2>
+        <div class="shots">
+          <figure class="shot shot--wide">
+            <div class="shot-chrome" aria-hidden="true">
+              <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+              <span class="shot-url">jobpilot / pipeline</span>
+            </div>
+            <div class="shot-body">
+              <img src="../assets/projects/jobpilot-01.png" alt="JobPilot pipeline — location-grouped application board" onerror="this.closest('.shot').classList.add('is-empty')">
+              <div class="shot-ph" aria-hidden="true">
+                <span class="shot-ph-badge">Screenshot Slot</span>
+                <span class="shot-ph-text">Drop <code>jobpilot-01.png</code> into <code>/assets/projects</code> and it appears here automatically.</span>
+              </div>
+            </div>
+            <figcaption class="shot-caption"><strong>Pipeline</strong> — every application, grouped by location, from "found" to "offer".</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="shot-chrome" aria-hidden="true">
+              <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+              <span class="shot-url">jobpilot / analysis</span>
+            </div>
+            <div class="shot-body">
+              <img src="../assets/projects/jobpilot-02.png" alt="JobPilot role-fit analysis with ATS score and gap report" onerror="this.closest('.shot').classList.add('is-empty')">
+              <div class="shot-ph" aria-hidden="true">
+                <span class="shot-ph-badge">Screenshot Slot</span>
+                <span class="shot-ph-text">Drop <code>jobpilot-02.png</code> into <code>/assets/projects</code>.</span>
+              </div>
+            </div>
+            <figcaption class="shot-caption"><strong>Deep analysis</strong> — fit score, ATS readiness, gaps, interview prep.</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="shot-chrome" aria-hidden="true">
+              <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+              <span class="shot-url">jobpilot / keywords</span>
+            </div>
+            <div class="shot-body">
+              <img src="../assets/projects/jobpilot-03.png" alt="JobPilot keyword gap and networking panels" onerror="this.closest('.shot').classList.add('is-empty')">
+              <div class="shot-ph" aria-hidden="true">
+                <span class="shot-ph-badge">Screenshot Slot</span>
+                <span class="shot-ph-text">Drop <code>jobpilot-03.png</code> into <code>/assets/projects</code>.</span>
+              </div>
+            </div>
+            <figcaption class="shot-caption"><strong>Keyword &amp; networking</strong> — what the market asks for vs. what my CV says.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="THE PROBLEM">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">02</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Problem</span>
+        </div>
+        <h2 class="study-h2">The graduate job hunt is a data problem wearing a motivation problem's clothes.</h2>
+        <p>Hunting for a role in Dublin as an international MSc candidate means a dozen portals, hundreds of listings, ATS filters that reject silently, and the same CV-tailoring ritual repeated nightly. The hours go to <strong>admin</strong>; the minutes left over go to <strong>strategy</strong> — exactly backwards.</p>
+        <p>I treated it the way I'd treat any operations problem from my data-science years: instrument it, automate the collection, score the options, and spend human attention only where it changes the outcome.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="WHAT IT DOES">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">03</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">What It Does</span>
+        </div>
+        <h2 class="study-h2">An agent that hunts while I sleep.</h2>
+        <ul class="study-list">
+          <li><strong>Daily automated scans.</strong> A scheduled Claude agent sweeps the market every morning for roles matching my profile — AI governance, data, analyst and graduate tracks — and files what it finds into the dashboard.</li>
+          <li><strong>Deep role-fit analysis.</strong> Each promising role gets a structured report: fit score, role-fit narrative, ATS readiness, keyword gaps to address, and tailored interview-prep questions.</li>
+          <li><strong>A live pipeline.</strong> Applications grouped by location and stage, with expired-listing handling, internship filters, experience-level filters, and manual add-a-job for roles found in the wild.</li>
+          <li><strong>Keyword intelligence.</strong> Aggregated across every analysed role: which skills the market keeps asking for that my CV under-sells — feeding directly back into how I position myself.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="BUILT WITH CLAUDE">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">04</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">Built With Claude</span>
+        </div>
+        <h2 class="study-h2">Claude is the engine — and the co-engineer.</h2>
+        <p>JobPilot runs on <strong>scheduled Claude agent tasks</strong>: the same agent that helped design and build the dashboard executes the daily scans and writes each analysis as structured JSON the dashboard renders. Designing those schemas — what a "fit score" must contain to be trustworthy, how a gap report should be phrased to be actionable — was prompt engineering as product design.</p>
+        <p>It also gave me a genuinely production-flavoured incident: a new analysis schema ("Deep Analysis v1") started landing alongside the old format, and the dashboard — which assumed one shape — crashed on render. The fix was a <strong>normalisation layer at the data boundary</strong> that converts every schema version into one canonical shape, unit-tested against all 40+ real analyses. Schema versioning, data contracts, graceful degradation: the exact disciplines AI governance frameworks ask of production ML systems, learned on my own stack first.</p>
+        <div class="study-quote">
+          <p>"The best way to understand what governing an AI system takes is to be the one who has to trust its outputs every morning."</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="TECH & SKILLS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">05</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">Tech &amp; Skills</span>
+        </div>
+        <h2 class="study-h2">What it's made of — and what it made of me.</h2>
+        <div class="proj-tech">
+          <div>
+            <div class="proj-tech-col-label">Technology</div>
+            <div class="proj-tech-chips">
+              <span class="chip">Claude agents &amp; scheduling</span>
+              <span class="chip">Structured JSON outputs</span>
+              <span class="chip">Vanilla JS dashboard</span>
+              <span class="chip">Local JSON data store</span>
+              <span class="chip">Zero external services</span>
+            </div>
+          </div>
+          <div>
+            <div class="proj-tech-col-label">Skills Exercised</div>
+            <div class="proj-tech-chips">
+              <span class="chip">Prompt &amp; schema engineering</span>
+              <span class="chip">Data contracts &amp; versioning</span>
+              <span class="chip">Automation ops</span>
+              <span class="chip">ATS / keyword analytics</span>
+              <span class="chip">Product thinking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="OUTCOME">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">06</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">Outcome</span>
+        </div>
+        <h2 class="study-h2">Hours of admin became minutes of triage.</h2>
+        <div class="proj-outcomes">
+          <div class="proj-outcome">
+            <div class="proj-outcome-num"><span data-count="40">40</span><span class="accent-text">+</span></div>
+            <div class="proj-outcome-label">AI role-fit analyses generated</div>
+          </div>
+          <div class="proj-outcome">
+            <div class="proj-outcome-num"><span data-count="7">7</span><span class="accent-text">/7</span></div>
+            <div class="proj-outcome-label">Days a week the market gets scanned</div>
+          </div>
+          <div class="proj-outcome">
+            <div class="proj-outcome-num"><span data-count="1">1</span></div>
+            <div class="proj-outcome-label">View of the entire pipeline</div>
+          </div>
+        </div>
+        <p>Every application decision now starts from evidence: a scored fit, a named gap, a prepared question list. The tool doesn't apply for me — it makes sure that when I do, it's the <strong>right role, with the right CV, for the right reasons</strong>.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="LEARNINGS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">07</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">What I Learned</span>
+        </div>
+        <h2 class="study-h2">Automation without observability is just faster chaos.</h2>
+        <div class="study-callout">
+          <div class="study-callout-label">Key Takeaways</div>
+          <ul class="study-list">
+            <li><strong>Normalise at the boundary.</strong> When an AI writes your data, schema drift isn't an edge case — it's a certainty. One canonical shape, enforced at ingestion, saved the whole system.</li>
+            <li><strong>An agent is a colleague: brief it well.</strong> The quality of every analysis traced back to how precisely the task and output contract were specified. Vague prompts produce confident nonsense.</li>
+            <li><strong>Trust needs receipts.</strong> I only rely on JobPilot's scores because I can audit how they're produced — the same standard the EU AI Act sets for systems that score other people.</li>
+          </ul>
+        </div>
+        <div class="study-note">
+          <p>Privacy by design: everything — CV, analyses, pipeline — lives locally. No third-party trackers, no data leaving the machine. Art. 5(1)(c) isn't just something I study.</p>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- ============ PAGER ============ -->
+  <footer class="study-pager">
+    <div class="study-pager-inner">
+      <a class="study-pager-link" href="compliance-app.html">
+        <span class="study-pager-dir">← Previous Project</span>
+        <span class="study-pager-title">AI Compliance Learning App</span>
+      </a>
+      <a class="study-pager-link is-next" href="cippe-companion.html">
+        <span class="study-pager-dir">Next Project →</span>
+        <span class="study-pager-title">CIPP/E Study Companion</span>
+      </a>
+      <div class="study-pager-all">
+        <a href="../index.html#projects">↖ Back to all projects</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script type="module" src="../js/case-page.js?v=3"></script>
+</body>
+</html>

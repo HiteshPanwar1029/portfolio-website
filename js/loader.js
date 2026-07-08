@@ -11,6 +11,19 @@
    prefers-reduced-motion: skip the count, reveal immediately.
    ============================================================ */
 
+/* Session flag: the intro loader plays once per browser tab. Any
+   later navigation back to the home page (e.g. clicking the name in
+   the nav from a project or case-study page) lands directly on the
+   revealed hero — no replay. case-page.js sets the same flag. */
+export const INTRO_SEEN_KEY = 'hp-intro-seen';
+
+function introSeen() {
+  try { return sessionStorage.getItem(INTRO_SEEN_KEY) === '1'; } catch { return false; }
+}
+function markIntroSeen() {
+  try { sessionStorage.setItem(INTRO_SEEN_KEY, '1'); } catch { /* private mode — ignore */ }
+}
+
 export function initLoader() {
   const root = document.querySelector('.site');
   if (!root) return;
@@ -19,17 +32,22 @@ export function initLoader() {
   const countNum = document.querySelector('.loader-count-num');
   const bar = document.querySelector('.loader-bar');
 
-  assignRevealDelays(root);
-
   const reveal = () => root.classList.add('is-revealed');
 
-  // Reduced motion (or no rAF): show the finished state at once.
-  if (reduce) {
+  // Already seen this session (or reduced motion): skip straight to
+  // the finished hero. .is-instant kills the reveal transitions and
+  // hides the loader overlay (see animations.css).
+  if (reduce || introSeen()) {
+    markIntroSeen();
+    root.classList.add('is-instant');
     if (countNum) countNum.textContent = '100';
     if (bar) bar.style.width = '100%';
     reveal();
     return;
   }
+
+  markIntroSeen();
+  assignRevealDelays(root);
 
   const setProgress = (v) => {
     if (countNum) countNum.textContent = String(v).padStart(2, '0');
@@ -55,7 +73,8 @@ function assignRevealDelays(root) {
   const nameChars = root.querySelectorAll('.hero-name .char');
   nameChars.forEach((el, i) => { el.style.transitionDelay = (0.05 + i * 0.05).toFixed(3) + 's'; });
 
-  // Hero subtitle: starts after the name finishes, step 0.014s.
+  // Hero subtitle chars were removed with the subtitle; the maths
+  // below still adapts if a .hero-subtitle ever returns.
   const titleBase = 0.05 + nameChars.length * 0.05 + 0.25;
   const titleChars = root.querySelectorAll('.hero-subtitle .char');
   titleChars.forEach((el, i) => { el.style.transitionDelay = (titleBase + i * 0.014).toFixed(3) + 's'; });

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Compliance Learning App — Project · Hitesh Panwar</title>
+  <meta name="description" content="AI Compliance Learning App — an interactive training tool for EU AI Act risk classification and DPIA methodology. No build tools, no backend, no tracking. Built with Claude.">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles (order matters: tokens → base → animations → sections → responsive → case-study → project-page) -->
+  <link rel="stylesheet" href="../css/tokens.css?v=3">
+  <link rel="stylesheet" href="../css/base.css?v=3">
+  <link rel="stylesheet" href="../css/animations.css?v=3">
+  <link rel="stylesheet" href="../css/sections.css?v=3">
+  <link rel="stylesheet" href="../css/responsive.css?v=3">
+  <link rel="stylesheet" href="../css/case-study.css?v=3">
+  <link rel="stylesheet" href="../css/project-page.css?v=3">
+</head>
+<body>
+<div class="site">
+
+  <!-- scroll progress -->
+  <div class="progress" aria-hidden="true"></div>
+  <!-- cursor glow -->
+  <div class="glow" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Hitesh Panwar<span class="accent-text">.</span></a>
+      <div class="nav-links">
+        <a href="../index.html#projects" class="nav-link">← All Projects</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- mobile fullscreen menu -->
+  <div class="menu" id="mobile-menu">
+    <a href="../index.html#projects" class="menu-link">All Projects</a>
+    <a href="../index.html#about" class="menu-link">About</a>
+    <a href="../index.html#contact" class="menu-link">Contact</a>
+  </div>
+
+  <!-- ============ PAGE HEAD ============ -->
+  <header class="study-head" data-section data-label="OVERVIEW">
+    <div class="study-head-grid" aria-hidden="true"></div>
+    <div class="study-head-glow" aria-hidden="true"></div>
+    <div class="study-head-inner">
+      <div class="study-eyebrow reveal-up" data-reveal="up">
+        <a href="../index.html#projects">Projects</a>
+        <span class="study-eyebrow-sep" aria-hidden="true">/</span>
+        <span>03 · 03</span>
+      </div>
+      <div class="study-tags reveal-up" data-reveal="up" data-delay="80">
+        <span class="chip">EU AI Act</span>
+        <span class="chip">DPIA</span>
+        <span class="chip">Zero Backend</span>
+      </div>
+      <h1 class="study-title reveal-up" data-reveal="up" data-delay="140">AI Compliance Learning App — practise the law, don't just read it.</h1>
+      <p class="study-standfirst reveal-up" data-reveal="up" data-delay="220">An interactive trainer that puts a concrete AI system in front of you and demands a defensible risk classification — then walks the reasoning with you. No build tools, no backend, no tracking, nothing to pay for.</p>
+      <dl class="study-meta reveal-up" data-reveal="up" data-delay="300">
+        <div>
+          <dt>Role</dt>
+          <dd>Design, content &amp; build (with Claude)</dd>
+        </div>
+        <div>
+          <dt>Stack</dt>
+          <dd>HTML · CSS · Vanilla JS · scenario JSON</dd>
+        </div>
+        <div>
+          <dt>Dependencies</dt>
+          <dd>None — no build step, no backend, no API keys</dd>
+        </div>
+        <div>
+          <dt>Cost to run</dt>
+          <dd>€0</dd>
+        </div>
+      </dl>
+    </div>
+  </header>
+
+  <!-- ============ ARTICLE ============ -->
+  <article class="study-body">
+
+    <section class="study-section" data-section data-label="SCREENS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">01</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Product</span>
+        </div>
+        <h2 class="study-h2">Three modules, built around doing.</h2>
+        <div class="shots">
+          <figure class="shot shot--wide">
+            <div class="shot-chrome" aria-hidden="true">
+              <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+              <span class="shot-url">compliance-app / risk-classifier</span>
+            </div>
+            <div class="shot-body">
+              <img src="../assets/projects/compliance-01.png" alt="Risk classification trainer — placing an AI system into EU AI Act tiers" onerror="this.closest('.shot').classList.add('is-empty')">
+              <div class="shot-ph" aria-hidden="true">
+                <span class="shot-ph-badge">Screenshot Slot</span>
+                <span class="shot-ph-text">Drop <code>compliance-01.png</code> into <code>/assets/projects</code> and it appears here automatically.</span>
+              </div>
+            </div>
+            <figcaption class="shot-caption"><strong>Risk classification trainer</strong> — commit to a tier before you see the reasoning.</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="shot-chrome" aria-hidden="true">
+              <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+              <span class="shot-url">compliance-app / dpia</span>
+            </div>
+            <div class="shot-body">
+              <img src="../assets/projects/compliance-02.png" alt="DPIA walkthrough — step-by-step Article 35 assessment" onerror="this.closest('.shot').classList.add('is-empty')">
+              <div class="shot-ph" aria-hidden="true">
+                <span class="shot-ph-badge">Screenshot Slot</span>
+                <span class="shot-ph-text">Drop <code>compliance-02.png</code> into <code>/assets/projects</code>.</span>
+              </div>
+            </div>
+            <figcaption class="shot-caption"><strong>DPIA walkthrough</strong> — weak vs. strong answers, side by side.</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="shot-chrome" aria-hidden="true">
+              <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+              <span class="shot-url">compliance-app / frameworks</span>
+            </div>
+            <div class="shot-body">
+              <img src="../assets/projects/compliance-03.png" alt="Governance frameworks reference — three lines of defence, NIST AI RMF mapping" onerror="this.closest('.shot').classList.add('is-empty')">
+              <div class="shot-ph" aria-hidden="true">
+                <span class="shot-ph-badge">Screenshot Slot</span>
+                <span class="shot-ph-text">Drop <code>compliance-03.png</code> into <code>/assets/projects</code>.</span>
+              </div>
+            </div>
+            <figcaption class="shot-caption"><strong>Frameworks reference</strong> — 3LOD, provider/deployer duties, NIST AI RMF.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="THE PROBLEM">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">02</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">The Problem</span>
+        </div>
+        <h2 class="study-h2">Compliance knowledge lives in PDFs. Compliance skill doesn't.</h2>
+        <p>Everything about the EU AI Act and GDPR is written down somewhere — the regulations, EDPB guidance, a thousand law-firm explainers. But the practical skills — <strong>classifying a real system into a risk tier, running a DPIA that survives scrutiny</strong> — are learned on the job, because reading about a decision procedure is nothing like executing one.</p>
+        <p>I couldn't find a tool that trained those skills without expensive corporate licensing. So I built one — for myself first, then for anyone.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="WHAT IT DOES">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">03</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">What It Does</span>
+        </div>
+        <h2 class="study-h2">Commit first. Understand second. Remember forever.</h2>
+        <ul class="study-list">
+          <li><strong>Risk classification trainer.</strong> Realistic system descriptions — a CV-screening model, emotion recognition in a call centre, a disclosed chatbot — each demanding a tier: prohibited, high, limited, or minimal. You answer before you see the Article 5 / Annex III reasoning, including why the plausible wrong answers are wrong.</li>
+          <li><strong>DPIA walkthrough.</strong> The full Article 35 structure: describing processing, necessity and proportionality, risks to rights and freedoms, mitigations — with weak and strong sample answers side by side.</li>
+          <li><strong>Governance frameworks reference.</strong> Three lines of defence, provider vs. deployer obligations, and how NIST AI RMF's govern–map–measure–manage cycle maps onto Act requirements.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="BUILT WITH CLAUDE">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">04</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">Built With Claude</span>
+        </div>
+        <h2 class="study-h2">Constraints as design — enforced by a very literal collaborator.</h2>
+        <p>Three deliberate constraints shaped the build: <strong>no build tools</strong> (open index.html and it runs, forever), <strong>no API costs</strong> (all logic client-side, shareable with a whole cohort for free), and <strong>no backend</strong> (progress in localStorage; no account, no tracking, no personal data leaving the device — the app practises the data minimisation it teaches).</p>
+        <p>Working with Claude, the architecture stayed honest: scenario content lives in <strong>plain JSON, fully separated from the engine</strong>, so adding a scenario is a content task a lawyer could do, not a programming task. The hardest work was writing scenarios whose answers I could defend against a lawyer's objection — and drafting those reasoning chains with Claude, then stress-testing them against the actual regulation text, was the deepest EU AI Act study I've ever done.</p>
+        <div class="study-quote">
+          <p>"A tool that teaches GDPR should be the one thing in your browser that provably isn't collecting anything."</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="TECH & SKILLS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">05</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">Tech &amp; Skills</span>
+        </div>
+        <h2 class="study-h2">What it's made of — and what it made of me.</h2>
+        <div class="proj-tech">
+          <div>
+            <div class="proj-tech-col-label">Technology</div>
+            <div class="proj-tech-chips">
+              <span class="chip">Semantic HTML + vanilla JS</span>
+              <span class="chip">Scenario JSON content model</span>
+              <span class="chip">localStorage persistence</span>
+              <span class="chip">Full keyboard operability</span>
+            </div>
+          </div>
+          <div>
+            <div class="proj-tech-col-label">Skills Exercised</div>
+            <div class="proj-tech-chips">
+              <span class="chip">EU AI Act risk tiers</span>
+              <span class="chip">DPIA methodology — Art. 35</span>
+              <span class="chip">Instructional design</span>
+              <span class="chip">Privacy by design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="OUTCOME">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">06</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">Outcome</span>
+        </div>
+        <h2 class="study-h2">Durable, forkable, private — and it taught its builder most of all.</h2>
+        <div class="proj-outcomes">
+          <div class="proj-outcome">
+            <div class="proj-outcome-num"><span data-count="3">3</span></div>
+            <div class="proj-outcome-label">Training modules — classify, assess, reference</div>
+          </div>
+          <div class="proj-outcome">
+            <div class="proj-outcome-num"><span data-count="0">0</span></div>
+            <div class="proj-outcome-label">Trackers, accounts, or bytes leaving the device</div>
+          </div>
+          <div class="proj-outcome">
+            <div class="proj-outcome-num">€<span data-count="0">0</span></div>
+            <div class="proj-outcome-label">To run, share, or deploy anywhere</div>
+          </div>
+        </div>
+        <p>The borderline scenarios exposed where the Act itself is ambiguous — and ambiguity that survives translation into a decision tree is exactly the ambiguity <strong>clients pay to have navigated</strong>. This project is also the subject of a full written case study: <a href="../case-studies/compliance-layer.html">Building the Compliance Layer</a>.</p>
+      </div>
+    </section>
+
+    <section class="study-section" data-section data-label="LEARNINGS">
+      <div class="study-wrap">
+        <div class="study-kicker reveal-up" data-reveal="up">
+          <span class="study-kicker-num">07</span>
+          <span class="study-kicker-rule" aria-hidden="true"></span>
+          <span class="study-kicker-label">What I Learned</span>
+        </div>
+        <h2 class="study-h2">Writing the scenarios was harder than writing the code.</h2>
+        <div class="study-callout">
+          <div class="study-callout-label">Key Takeaways</div>
+          <ul class="study-list">
+            <li><strong>Interactive beats declarative for regulatory training.</strong> Committing to an answer before seeing the reasoning is where learning happens.</li>
+            <li><strong>Constraints compound.</strong> No build, no backend, no cost made the app durable, forkable and private — properties a compliance tool should have anyway.</li>
+            <li><strong>Encoding law audits both the law and the encoder.</strong> Every fuzzy branch in the decision tree marked a fuzzy patch in my understanding — or in the Act.</li>
+          </ul>
+        </div>
+        <div class="study-note">
+          <p>Planned next: a GPAI-obligations module and a scenario pack on deployer transparency duties. The app is static — it deploys anywhere that serves files.</p>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- ============ PAGER ============ -->
+  <footer class="study-pager">
+    <div class="study-pager-inner">
+      <a class="study-pager-link" href="cippe-companion.html">
+        <span class="study-pager-dir">← Previous Project</span>
+        <span class="study-pager-title">CIPP/E Study Companion</span>
+      </a>
+      <a class="study-pager-link is-next" href="jobpilot.html">
+        <span class="study-pager-dir">Next Project →</span>
+        <span class="study-pager-title">JobPilot</span>
+      </a>
+      <div class="study-pager-all">
+        <a href="../index.html#projects">↖ Back to all projects</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script type="module" src="../js/case-page.js?v=3"></script>
+</body>
+</html>

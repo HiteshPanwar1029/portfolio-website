@@ -66,6 +66,18 @@
   transform: none;
 }
 
+/* ---------- Instant reveal (returning visitor) ----------
+   js/loader.js adds .is-instant alongside .is-revealed when the
+   intro has already played this session (e.g. arriving back via the
+   nav-logo from a project page): no loader, no staggered reveal —
+   the hero simply is. */
+.site.is-instant .loader { display: none; }
+.site.is-instant .char,
+.site.is-instant .hero-fade {
+  transition: none;
+  transition-delay: 0s;
+}
+
 /* ---------- Scroll-reveal ----------
    Elements start hidden; js/scroll.js adds .is-shown (and the staggered
    data-delay inline) when the element enters the viewport. The visible
@@ -141,5 +153,9 @@
   .loader,
   .loader-bar { transition: none !important; }
   [data-nn] { animation: none !important; }   /* parity with idle('') */
+  .jc-line,
+  .jc-area,
+  .jc-pt { transition: none !important; }     /* trajectory chart appears drawn */
+  .jc-halo { animation: none !important; }
   * { scroll-behavior: auto !important; }
 }

@@ -2,8 +2,8 @@
    scroll.js — scroll-driven UI:
      • top progress bar (scroll position → width)
      • sticky nav frosted-glass transition past 60% of the hero
-     • active-section indicator (IntersectionObserver)
      • scroll-reveal for [data-reveal] elements (adds .is-shown)
+     • mobile hamburger menu
 
    prefers-reduced-motion: reveal elements are shown immediately
    (the CSS reduced-motion block also forces them visible).
@@ -12,7 +12,6 @@
 export function initScroll() {
   const progress = document.querySelector('.progress');
   const nav = document.querySelector('.nav');
-  const indicator = document.querySelector('.indicator');
   const hero = document.querySelector('.hero');
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -34,17 +33,7 @@ export function initScroll() {
     revealEls.forEach((el) => io.observe(el));
   }
 
-  // ---- Active section indicator ----
-  if (indicator) {
-    const so = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) indicator.textContent = '— ' + en.target.dataset.label;
-      });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    document.querySelectorAll('[data-section]').forEach((s) => so.observe(s));
-  }
-
-  // ---- Progress bar + sticky nav + indicator visibility ----
+  // ---- Progress bar + sticky nav ----
   const onScroll = () => {
     const sc = window.scrollY || document.documentElement.scrollTop;
     const h = document.documentElement.scrollHeight - window.innerHeight;
@@ -59,7 +48,6 @@ export function initScroll() {
       nav.style.webkitBackdropFilter = past ? 'blur(12px)' : 'none';
       nav.style.borderBottomColor = past ? 'rgba(240,237,230,0.08)' : 'transparent';
     }
-    if (indicator) indicator.style.opacity = sc > heroH * 0.5 ? '1' : '0';
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });

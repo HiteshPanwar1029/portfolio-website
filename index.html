@@ -17,12 +17,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Styles (order matters: tokens → base → animations → sections → responsive) -->
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Styles (order matters: tokens → base → animations → sections → responsive).
+       ?v= busts stale browser caches whenever styles change — bump on release. -->
+  <link rel="stylesheet" href="css/tokens.css?v=3">
+  <link rel="stylesheet" href="css/base.css?v=3">
+  <link rel="stylesheet" href="css/animations.css?v=3">
+  <link rel="stylesheet" href="css/sections.css?v=3">
+  <link rel="stylesheet" href="css/responsive.css?v=3">
 </head>
 <body>
 <div class="site">
@@ -31,8 +32,6 @@
   <div class="progress" aria-hidden="true"></div>
   <!-- cursor glow -->
   <div class="glow" aria-hidden="true"></div>
-  <!-- active section indicator -->
-  <div class="indicator" aria-hidden="true"></div>
 
   <!-- ============ NAV (fixed, global) ============ -->
   <nav class="nav" aria-label="Primary">
@@ -40,6 +39,7 @@
       <a href="#top" class="nav-logo">Hitesh Panwar<span class="accent-text">.</span></a>
       <div class="nav-links">
         <a href="#about" class="nav-link">About</a>
+        <a href="#journey" class="nav-link">Trajectory</a>
         <a href="#work" class="nav-link">Case Studies</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#projects" class="nav-link">Projects</a>
@@ -55,6 +55,7 @@
   <!-- mobile fullscreen menu -->
   <div class="menu" id="mobile-menu">
     <a href="#about" class="menu-link">About</a>
+    <a href="#journey" class="menu-link">Trajectory</a>
     <a href="#work" class="menu-link">Case Studies</a>
     <a href="#skills" class="menu-link">Skills</a>
     <a href="#projects" class="menu-link">Projects</a>
@@ -80,17 +81,6 @@
           <span class="word"><span class="char">H</span><span class="char">i</span><span class="char">t</span><span class="char">e</span><span class="char">s</span><span class="char">h</span></span>
           <span class="word"><span class="char">P</span><span class="char">a</span><span class="char">n</span><span class="char">w</span><span class="char">a</span><span class="char">r</span></span>
         </h1>
-        <div class="hero-subtitle">
-          <span class="word"><span class="char">A</span><span class="char">I</span></span>
-          <span class="word"><span class="char">G</span><span class="char">o</span><span class="char">v</span><span class="char">e</span><span class="char">r</span><span class="char">n</span><span class="char">a</span><span class="char">n</span><span class="char">c</span><span class="char">e</span></span>
-          <span class="word"><span class="char">&amp;</span></span>
-          <span class="word"><span class="char">R</span><span class="char">i</span><span class="char">s</span><span class="char">k</span></span>
-          <span class="word"><span class="char">|</span></span>
-          <span class="word"><span class="char">M</span><span class="char">S</span><span class="char">c</span></span>
-          <span class="word"><span class="char">M</span><span class="char">a</span><span class="char">n</span><span class="char">a</span><span class="char">g</span><span class="char">e</span><span class="char">m</span><span class="char">e</span><span class="char">n</span><span class="char">t</span><span class="char">,</span></span>
-          <span class="word"><span class="char">U</span><span class="char">C</span><span class="char">D</span></span>
-          <span class="word"><span class="char">S</span><span class="char">m</span><span class="char">u</span><span class="char">r</span><span class="char">f</span><span class="char">i</span><span class="char">t</span></span>
-        </div>
         <div class="hero-positioning hero-fade">
           <span class="hero-pos-bar" aria-hidden="true"></span>
           <p class="hero-pos-text">I turn the EU AI Act into systems teams can actually ship — evaluation harnesses, risk controls, and ethics built into the stack, not bolted on as policy.</p>
@@ -139,6 +129,80 @@
           <span class="chip">EU AI Act</span>
           <span class="chip">GDPR / CIPP/E</span>
           <span class="chip">GenAI Evaluation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2.5 — TRAJECTORY ============ -->
+  <section id="journey" class="journey" data-section data-label="TRAJECTORY">
+    <div class="journey-bg" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="reveal-up" data-reveal="up">
+        <div class="eyebrow">The Trajectory</div>
+        <h2 class="section-heading">Career, plotted. Every step aimed here.</h2>
+        <p class="journey-lede">Six data points, one direction. Click a point to inspect the evidence.</p>
+      </div>
+
+      <div class="jchart-wrap">
+        <!-- DESKTOP: the ascent chart -->
+        <svg class="jchart" viewBox="0 0 1000 460" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Career trajectory chart: six milestones rising from B.Tech in 2019 to AI Governance and Risk now">
+          <!-- gridlines -->
+          <line class="jc-grid" x1="60" y1="90"  x2="960" y2="90"  aria-hidden="true"></line>
+          <line class="jc-grid" x1="60" y1="170" x2="960" y2="170" aria-hidden="true"></line>
+          <line class="jc-grid" x1="60" y1="250" x2="960" y2="250" aria-hidden="true"></line>
+          <line class="jc-grid" x1="60" y1="330" x2="960" y2="330" aria-hidden="true"></line>
+          <line class="jc-grid" x1="60" y1="410" x2="960" y2="410" aria-hidden="true"></line>
+          <!-- axes -->
+          <text class="jc-axis" transform="rotate(-90 24 250)" x="24" y="250" text-anchor="middle" aria-hidden="true">READINESS →</text>
+          <!-- area under the line -->
+          <polygon class="jc-area" points="90,410 260,340 430,265 600,190 770,120 930,66 930,410 90,410" aria-hidden="true"></polygon>
+          <!-- the ascent -->
+          <polyline class="jc-line" points="90,410 260,340 430,265 600,190 770,120 930,66" aria-hidden="true"></polyline>
+          <!-- destination halo -->
+          <circle class="jc-halo" cx="930" cy="66" r="15" aria-hidden="true"></circle>
+          <!-- milestone points (interactive) -->
+          <circle class="jc-pt" data-jpt="0" cx="90"  cy="410" r="11" tabindex="0" role="button" aria-label="Phase 1, Foundation: B.Tech Computer Science, 2019 to 2023. Activate for details."></circle>
+          <circle class="jc-pt" data-jpt="1" cx="260" cy="340" r="11" tabindex="0" role="button" aria-label="Phase 2, Proof: production data science at Dysmech, 2022 to 2025. Activate for details."></circle>
+          <circle class="jc-pt" data-jpt="2" cx="430" cy="265" r="11" tabindex="0" role="button" aria-label="Phase 3, Perspective: MSc Management at UCD Smurfit, 2025 to 2026. Activate for details."></circle>
+          <circle class="jc-pt" data-jpt="3" cx="600" cy="190" r="11" tabindex="0" role="button" aria-label="Phase 4, Practice: GenAI evaluation at Outlier and RWS, 2025 to present. Activate for details."></circle>
+          <circle class="jc-pt" data-jpt="4" cx="770" cy="120" r="11" tabindex="0" role="button" aria-label="Phase 5, Credential: CIPP/E, in progress. Activate for details."></circle>
+          <circle class="jc-pt jc-pt--target" data-jpt="5" cx="930" cy="66" r="14" tabindex="0" role="button" aria-label="Phase 6, Destination: AI Governance and Risk, hiring now. Activate for details."></circle>
+          <!-- phase labels -->
+          <text class="jc-lbl" x="60"  y="380" text-anchor="start"  aria-hidden="true"><tspan class="jc-lbl-num">01 · </tspan>FOUNDATION</text>
+          <text class="jc-lbl" x="260" y="310" text-anchor="middle" aria-hidden="true"><tspan class="jc-lbl-num">02 · </tspan>PROOF</text>
+          <text class="jc-lbl" x="430" y="235" text-anchor="middle" aria-hidden="true"><tspan class="jc-lbl-num">03 · </tspan>PERSPECTIVE</text>
+          <text class="jc-lbl" x="600" y="160" text-anchor="middle" aria-hidden="true"><tspan class="jc-lbl-num">04 · </tspan>PRACTICE</text>
+          <text class="jc-lbl" x="770" y="90"  text-anchor="middle" aria-hidden="true"><tspan class="jc-lbl-num">05 · </tspan>CIPP/E</text>
+          <text class="jc-lbl" x="960" y="36"  text-anchor="end"    aria-hidden="true"><tspan class="jc-lbl-num">06 · </tspan>DESTINATION</text>
+          <!-- year labels -->
+          <text class="jc-year" x="90"  y="444" text-anchor="middle" aria-hidden="true">2019–23</text>
+          <text class="jc-year" x="260" y="374" text-anchor="middle" aria-hidden="true">2022–25</text>
+          <text class="jc-year" x="430" y="299" text-anchor="middle" aria-hidden="true">2025–26</text>
+          <text class="jc-year" x="600" y="224" text-anchor="middle" aria-hidden="true">2025–NOW</text>
+          <text class="jc-year" x="770" y="154" text-anchor="middle" aria-hidden="true">IN PROGRESS</text>
+          <text class="jc-year" x="930" y="100" text-anchor="middle" aria-hidden="true">HIRING NOW</text>
+        </svg>
+
+        <!-- MOBILE: compact ascent list -->
+        <ol class="jsteps">
+          <li><button class="jstep" type="button" data-jpt="0"><span class="jstep-num">01</span><span class="jstep-t">B.Tech Computer Science</span><span class="jstep-y">2019–23</span></button></li>
+          <li><button class="jstep" type="button" data-jpt="1"><span class="jstep-num">02</span><span class="jstep-t">Production Data Science</span><span class="jstep-y">2022–25</span></button></li>
+          <li><button class="jstep" type="button" data-jpt="2"><span class="jstep-num">03</span><span class="jstep-t">MSc Management, UCD Smurfit</span><span class="jstep-y">2025–26</span></button></li>
+          <li><button class="jstep" type="button" data-jpt="3"><span class="jstep-num">04</span><span class="jstep-t">GenAI Evaluation</span><span class="jstep-y">NOW</span></button></li>
+          <li><button class="jstep" type="button" data-jpt="4"><span class="jstep-num">05</span><span class="jstep-t">CIPP/E — IAPP</span><span class="jstep-y">ONGOING</span></button></li>
+          <li><button class="jstep is-active" type="button" data-jpt="5"><span class="jstep-num">06</span><span class="jstep-t">AI Governance &amp; Risk</span><span class="jstep-y">HIRING</span></button></li>
+        </ol>
+      </div>
+
+      <!-- Detail panel (driven by js/journey.js; defaults to the destination) -->
+      <div class="jdetail" aria-live="polite">
+        <div class="jdetail-kicker" data-j="kicker">PHASE 06 · DESTINATION — NOW</div>
+        <h3 class="jdetail-title" data-j="title">AI Governance &amp; Risk — Dublin / EU</h3>
+        <p class="jdetail-desc" data-j="desc">Five phases, one direction, zero doubt. Engineering to read the system, industry scars to respect it, management to price it, evaluation practice to test it, CIPP/E to regulate it. Available now.</p>
+        <div class="jdetail-foot">
+          <div class="jdetail-carry"><span class="jdetail-carry-label">Carried forward →</span> <span data-j="carry">Everything above, compounding</span></div>
+          <a href="#contact" class="journey-cta" data-j="cta">Start the conversation →</a>
         </div>
       </div>
     </div>
@@ -196,7 +260,7 @@
         <!-- output nodes (interactive: jump to section) -->
         <circle class="nn-output nn-idle-9"  data-nn="out" data-o="0" data-target="#work"     data-idle="nnFloat 2.6s ease-in-out 3.15s infinite" cx="800" cy="150" r="22" tabindex="0" role="link" aria-label="Work output: MechaHitler Case Study. Activate to jump to Case Studies."></circle>
         <circle class="nn-output nn-idle-10" data-nn="out" data-o="1" data-target="#projects" data-idle="nnFloat 2.6s ease-in-out 3.50s infinite" cx="800" cy="300" r="22" tabindex="0" role="link" aria-label="Work output: AI Compliance App. Activate to jump to Projects."></circle>
-        <circle class="nn-output nn-idle-11" data-nn="out" data-o="2" data-target="#projects" data-idle="nnFloat 2.6s ease-in-out 3.85s infinite" cx="800" cy="450" r="22" tabindex="0" role="link" aria-label="Work output: Resume Dashboard. Activate to jump to Projects."></circle>
+        <circle class="nn-output nn-idle-11" data-nn="out" data-o="2" data-target="#projects" data-idle="nnFloat 2.6s ease-in-out 3.85s infinite" cx="800" cy="450" r="22" tabindex="0" role="link" aria-label="Work output: JobPilot. Activate to jump to Projects."></circle>
         <!-- input nodes (interactive: highlight what the skill builds) -->
         <circle class="nn-input nn-idle-0" data-nn="in" data-i="0" data-idle="nnFloat 2.6s ease-in-out 0.00s infinite" cx="210" cy="80"  r="22" tabindex="0" role="button" aria-label="Skill: EU AI Act & Regulation. Activate to trace what it builds."></circle>
         <circle class="nn-input nn-idle-1" data-nn="in" data-i="1" data-idle="nnFloat 2.6s ease-in-out 0.35s infinite" cx="210" cy="190" r="22" tabindex="0" role="button" aria-label="Skill: GenAI Evaluation. Activate to trace what it builds."></circle>
@@ -211,7 +275,7 @@
         <text class="nn-label-in"  data-inlabel data-i="4" x="174" y="520" dominant-baseline="central" text-anchor="end" aria-hidden="true"><tspan class="nn-tspan">S5 · </tspan>Strategic Analysis</text>
         <text class="nn-label-out" data-outlabel data-o="0" x="836" y="150" dominant-baseline="central" text-anchor="start" aria-hidden="true">MechaHitler Case Study<tspan class="nn-tspan"> · W1</tspan></text>
         <text class="nn-label-out" data-outlabel data-o="1" x="836" y="300" dominant-baseline="central" text-anchor="start" aria-hidden="true">AI Compliance App<tspan class="nn-tspan"> · W2</tspan></text>
-        <text class="nn-label-out" data-outlabel data-o="2" x="836" y="450" dominant-baseline="central" text-anchor="start" aria-hidden="true">Resume Dashboard<tspan class="nn-tspan"> · W3</tspan></text>
+        <text class="nn-label-out" data-outlabel data-o="2" x="836" y="450" dominant-baseline="central" text-anchor="start" aria-hidden="true">JobPilot<tspan class="nn-tspan"> · W3</tspan></text>
       </svg>
 
       <!-- MOBILE: tappable stacked fallback -->
@@ -228,30 +292,12 @@
         <div class="nn-mobile-outs">
           <button class="nn-mout" type="button" data-mout data-o="0" data-target="#work">MechaHitler Case Study</button>
           <button class="nn-mout" type="button" data-mout data-o="1" data-target="#projects">AI Compliance App</button>
-          <button class="nn-mout" type="button" data-mout data-o="2" data-target="#projects">Resume Dashboard</button>
+          <button class="nn-mout" type="button" data-mout data-o="2" data-target="#projects">JobPilot</button>
         </div>
       </div>
     </div>
 
     <div class="nn-foot">Tap a skill to trace it to my work.</div>
-  </section>
-
-  <!-- ============ SECTION 3 — STATS ============ -->
-  <section class="stats" data-section data-label="CREDENTIALS">
-    <div class="stats-grid">
-      <div class="stat reveal-up" data-reveal="up" data-delay="0">
-        <div class="stat-num"><span data-count="3">3</span><span class="accent-text">+</span></div>
-        <div class="stat-label">AI Governance Frameworks</div>
-      </div>
-      <div class="stat reveal-up" data-reveal="up" data-delay="120">
-        <div class="stat-num"><span data-count="5">5</span><span class="accent-text"></span></div>
-        <div class="stat-label">Roles Across AI &amp; Data</div>
-      </div>
-      <div class="stat reveal-up" data-reveal="up" data-delay="240">
-        <div class="stat-num"><span data-count="2">2</span><span class="accent-text"></span></div>
-        <div class="stat-label">Regulatory Domains (GDPR · EU AI Act)</div>
-      </div>
-    </div>
   </section>
 
   <!-- ============ SECTION 4 — CASE STUDIES ============ -->
@@ -326,6 +372,20 @@
           <div class="skill-item">Academic Research</div>
         </div>
       </div>
+      <div class="skills-stats reveal-up" data-reveal="up" data-delay="80">
+        <div class="sk-stat">
+          <span class="sk-stat-num"><span data-count="3">3</span><span class="accent-text">+</span></span>
+          <span class="sk-stat-label">AI Governance Frameworks</span>
+        </div>
+        <div class="sk-stat">
+          <span class="sk-stat-num"><span data-count="5">5</span></span>
+          <span class="sk-stat-label">Roles Across AI &amp; Data</span>
+        </div>
+        <div class="sk-stat">
+          <span class="sk-stat-num"><span data-count="2">2</span></span>
+          <span class="sk-stat-label">Regulatory Domains — GDPR · EU AI Act</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -333,40 +393,88 @@
   <section id="projects" class="projects" data-section data-label="PROJECTS">
     <div class="wrap">
       <div class="reveal-up" data-reveal="up">
-        <div class="eyebrow">Builds</div>
-        <h2 class="section-heading">Things I made to solve real problems.</h2>
+        <div class="eyebrow">Built with Claude</div>
+        <h2 class="section-heading">I don't just study AI governance. I ship with AI — daily.</h2>
+        <p class="proj-lede">Three working tools, designed and built in collaboration with Claude. Each one solves a real problem of mine — and each taught me something about how AI should be governed.</p>
       </div>
       <div class="proj-grid">
         <article class="proj-card" data-reveal="up" data-delay="0">
+          <div class="proj-num">01</div>
           <div class="proj-tags">
-            <span class="proj-tag">Claude API</span>
-            <span class="proj-tag">Vanilla JS</span>
-            <span class="proj-tag">Local Tool</span>
+            <span class="proj-tag">Claude Agents</span>
+            <span class="proj-tag">Scheduled Automation</span>
+            <span class="proj-tag">Data Pipeline</span>
           </div>
-          <h3 class="proj-title">Resume Analysis Dashboard</h3>
-          <p class="proj-desc">A local, no-API-key dashboard that reads CVs and job descriptions, scores ATS compatibility, identifies keyword gaps, and drafts cover letters.</p>
-          <a href="#" class="proj-link">↗ GitHub</a>
+          <h3 class="proj-title">JobPilot — Job-Search Command Center</h3>
+          <p class="proj-desc">While other candidates refresh job boards, my agent does it for me. Claude scans the Irish market daily, scores every role against my profile, flags keyword gaps, and feeds a live application pipeline.</p>
+          <div class="proj-metric">40+ AI role-fit analyses · runs every day, unattended</div>
+          <a href="projects/jobpilot.html" class="proj-link">Explore JobPilot →</a>
         </article>
         <article class="proj-card" data-reveal="up" data-delay="120">
+          <div class="proj-num">02</div>
           <div class="proj-tags">
-            <span class="proj-tag">HTML/CSS/JS</span>
-            <span class="proj-tag">EU AI Act</span>
+            <span class="proj-tag">PWA</span>
+            <span class="proj-tag">Spaced Repetition</span>
             <span class="proj-tag">GDPR</span>
           </div>
-          <h3 class="proj-title">AI Compliance Learning App</h3>
-          <p class="proj-desc">Interactive compliance education tool covering DPIA methodology, risk tiers, and governance frameworks. Static — no backend required.</p>
-          <a href="#" class="proj-link">↗ GitHub</a>
+          <h3 class="proj-title">CIPP/E Study Companion</h3>
+          <p class="proj-desc">An offline-first study app I built with Claude to drill for the IAPP CIPP/E — spaced-repetition GDPR drills, installable on my phone, deployed via GitHub Pages.</p>
+          <div class="proj-metric">Offline-first · on my home screen, used daily</div>
+          <a href="projects/cippe-companion.html" class="proj-link">Explore the App →</a>
         </article>
         <article class="proj-card" data-reveal="up" data-delay="240">
+          <div class="proj-num">03</div>
           <div class="proj-tags">
-            <span class="proj-tag">SEO</span>
-            <span class="proj-tag">Content Strategy</span>
-            <span class="proj-tag">Web</span>
+            <span class="proj-tag">EU AI Act</span>
+            <span class="proj-tag">DPIA</span>
+            <span class="proj-tag">Zero Backend</span>
           </div>
-          <h3 class="proj-title">Heritage Tourism Content Platform</h3>
-          <p class="proj-desc">Founded and built an SEO-optimized heritage tourism website. Applied content strategy frameworks to drive organic discovery.</p>
-          <a href="#" class="proj-link">↗ Live Site</a>
+          <h3 class="proj-title">AI Compliance Learning App</h3>
+          <p class="proj-desc">Interactive training tool for EU AI Act risk classification and DPIA methodology. No build tools, no tracking, no backend — a privacy tool that practises what it teaches.</p>
+          <div class="proj-metric">3 modules · €0 to run · nothing leaves the device</div>
+          <a href="projects/compliance-app.html" class="proj-link">Explore the App →</a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 6.5 — GOVERNANCE, INTERACTIVE ============ -->
+  <section id="governance" class="gov" data-section data-label="GOVERNANCE">
+    <div class="wrap">
+      <div class="reveal-up" data-reveal="up">
+        <div class="eyebrow">Interactive — Try It</div>
+        <h2 class="section-heading">The EU AI Act in one pyramid. Click a tier.</h2>
+      </div>
+
+      <div class="gov-grid">
+        <div class="gov-pyramid" role="tablist" aria-label="EU AI Act risk tiers">
+          <button class="gov-tier gov-tier--0" type="button" role="tab" aria-selected="false" data-tier="0" id="gov-tab-0" aria-controls="gov-detail">Prohibited</button>
+          <button class="gov-tier gov-tier--1 is-active" type="button" role="tab" aria-selected="true" data-tier="1" id="gov-tab-1" aria-controls="gov-detail">High Risk</button>
+          <button class="gov-tier gov-tier--2" type="button" role="tab" aria-selected="false" data-tier="2" id="gov-tab-2" aria-controls="gov-detail">Limited Risk</button>
+          <button class="gov-tier gov-tier--3" type="button" role="tab" aria-selected="false" data-tier="3" id="gov-tab-3" aria-controls="gov-detail">Minimal Risk</button>
+        </div>
+        <div class="gov-detail" id="gov-detail" role="tabpanel" aria-live="polite">
+          <div class="gov-detail-kicker" data-gov="kicker">TIER · HIGH RISK — ANNEX III</div>
+          <h3 class="gov-detail-title" data-gov="title">Where governance becomes engineering.</h3>
+          <p class="gov-detail-what" data-gov="what">CV screening, credit scoring, exam proctoring, critical infrastructure. Permitted — but only with a full control stack in place.</p>
+          <div class="gov-detail-chips" data-gov="chips">
+            <span class="chip">Risk management system</span>
+            <span class="chip">Data governance</span>
+            <span class="chip">Human oversight</span>
+            <span class="chip">Logging &amp; conformity</span>
+          </div>
+          <p class="gov-detail-take"><span class="gov-take-label">My take —</span> <span data-gov="take">This is the tier I want to work in. It's where the Act stops being policy and becomes an engineering problem.</span></p>
+        </div>
+      </div>
+
+      <div class="gov-gdpr">
+        <div class="gov-gdpr-label">GDPR PRINCIPLES — AND HOW THIS VERY SITE HONOURS THEM (HOVER)</div>
+        <div class="gov-gdpr-chips">
+          <button class="gdpr-chip" type="button" data-flip="This site collects nothing. The easiest minimisation audit ever passed.">Data minimisation — Art. 5(1)(c)</button>
+          <button class="gdpr-chip" type="button" data-flip="Your visit has exactly one purpose: deciding to hire Hitesh.">Purpose limitation — Art. 5(1)(b)</button>
+          <button class="gdpr-chip" type="button" data-flip="Nothing stored, so nothing to erase. Right to erasure: pre-fulfilled.">Storage limitation — Art. 5(1)(e)</button>
+          <button class="gdpr-chip" type="button" data-flip="View source. Every line of this site is inspectable — that's transparency.">Transparency — Art. 5(1)(a)</button>
+        </div>
       </div>
     </div>
   </section>
@@ -381,12 +489,25 @@
         <a class="contact-btn" href="mailto:panwar.hitesh1029@gmail.com">→ panwar.hitesh1029@gmail.com</a>
         <a class="contact-btn" href="https://linkedin.com/in/hitesh-panwar0" target="_blank" rel="noopener">→ LinkedIn</a>
       </div>
+      <p class="contact-made">This website is made using <span class="accent-text">Claude</span> — fittingly, by the candidate who governs AI with AI.</p>
     </div>
     <div class="contact-foot">Hitesh Panwar · Dublin, Ireland · 2026</div>
   </section>
 
+  <!-- ============ CONSENT BANNER (the honest kind) ============ -->
+  <aside class="consent" role="note" aria-label="Privacy notice" hidden>
+    <div class="consent-inner">
+      <div class="consent-kicker">PRIVACY NOTICE — THE SHORTEST ONE YOU'LL READ TODAY</div>
+      <p class="consent-text" data-consent="text">Cookies? None. Trackers? None. Personal data collected? None. Data minimisation — Art. 5(1)(c) GDPR — practised, not preached.</p>
+      <div class="consent-actions">
+        <button class="consent-btn" type="button" data-consent="accept">Accept nothing</button>
+        <button class="consent-btn consent-btn--ghost" type="button" data-consent="reject">Reject nothing</button>
+      </div>
+    </div>
+  </aside>
+
 </div>
 
-<script type="module" src="js/main.js"></script>
+<script type="module" src="js/main.js?v=3"></script>
 </body>
 </html>

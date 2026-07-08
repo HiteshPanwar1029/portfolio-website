@@ -1,0 +1,149 @@
+/* ============================================================
+   project-page.css — layout for individual project pages
+   (projects/*.html). Loaded after case-study.css, which supplies
+   the shared .study-* article layout; this file adds only what
+   projects need on top: the screenshot gallery (with drop-in
+   placeholder slots), the outcome-stat strip and the tech grid.
+
+   SCREENSHOTS: each .shot contains an <img> pointing at
+   assets/projects/<name>.png. Until that file exists, the img's
+   inline onerror adds .is-empty to the .shot, which hides the img
+   and shows the labelled placeholder. To fill a slot, just drop a
+   PNG with the right name into /assets/projects — no code changes.
+   ============================================================ */
+
+/* ---------- Screenshot gallery ---------- */
+.shots {
+  margin: 44px 0 10px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+}
+.shot--wide { grid-column: 1 / -1; }
+.shot {
+  background: var(--panel);
+  border: 1px solid rgba(var(--fg-rgb), 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+.shot:hover { border-color: rgba(var(--signal-rgb), 0.4); }
+
+/* Faux browser chrome. */
+.shot-chrome {
+  display: flex; align-items: center; gap: 7px;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(var(--fg-rgb), 0.08);
+  background: rgba(var(--bg-rgb), 0.55);
+}
+.shot-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: rgba(var(--fg-rgb), 0.18);
+}
+.shot-url {
+  margin-left: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.06em;
+  color: var(--tan);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* Image area — 16:10-ish; image shown when present. */
+.shot-body {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background:
+    repeating-linear-gradient(90deg, rgba(var(--signal-rgb), 0.045) 0 1px, transparent 1px 48px),
+    repeating-linear-gradient(0deg, rgba(var(--fg-rgb), 0.02) 0 1px, transparent 1px 48px),
+    var(--bg);
+}
+.shot-body img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  display: block;
+}
+.shot.is-empty .shot-body img { display: none; }
+
+/* Placeholder slot (visible only while the PNG is missing). */
+.shot-ph {
+  display: none;
+  position: absolute; inset: 14px;
+  border: 1.5px dashed rgba(var(--tan-rgb), 0.4);
+  border-radius: 2px;
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; padding: 18px; text-align: center;
+}
+.shot.is-empty .shot-ph { display: flex; }
+.shot-ph-badge {
+  font-family: var(--font-mono);
+  font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(var(--signal-rgb), 0.5);
+  padding: 5px 12px; border-radius: 2px;
+}
+.shot-ph-text {
+  font-family: var(--font-mono);
+  font-size: 12px; line-height: 1.7; letter-spacing: 0.02em;
+  color: var(--tan); max-width: 40ch;
+}
+.shot-ph-text code {
+  color: var(--fg);
+  background: rgba(var(--fg-rgb), 0.07);
+  padding: 1px 6px; border-radius: 2px;
+}
+
+.shot-caption {
+  padding: 13px 16px;
+  border-top: 1px solid rgba(var(--fg-rgb), 0.08);
+  font-family: var(--font-mono);
+  font-size: 11.5px; letter-spacing: 0.05em;
+  color: var(--tan);
+}
+.shot-caption strong { color: var(--fg); font-weight: 600; }
+
+/* ---------- Outcome stat strip ---------- */
+.proj-outcomes {
+  margin: 36px 0;
+  display: flex; flex-wrap: wrap;
+  border: 1px solid rgba(var(--fg-rgb), 0.1);
+  border-radius: 2px;
+  background: var(--panel);
+}
+.proj-outcome {
+  flex: 1 1 180px;
+  padding: 22px 26px;
+  border-right: 1px solid rgba(var(--fg-rgb), 0.08);
+}
+.proj-outcome:last-child { border-right: none; }
+.proj-outcome-num {
+  font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1; letter-spacing: -0.02em; color: var(--fg);
+  font-variant-numeric: tabular-nums;
+}
+.proj-outcome-num .accent-text { font-size: 0.7em; }
+.proj-outcome-label {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  line-height: 1.55; color: var(--tan);
+}
+
+/* ---------- Tech & skills grid ---------- */
+.proj-tech {
+  margin: 30px 0 10px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 26px;
+}
+.proj-tech-col-label {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.proj-tech-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .shots { grid-template-columns: 1fr; gap: 16px; }
+  .proj-tech { grid-template-columns: 1fr; }
+  .proj-outcomes { flex-direction: column; }
+  .proj-outcome { border-right: none; border-bottom: 1px solid rgba(var(--fg-rgb), 0.08); }
+  .proj-outcome:last-child { border-bottom: none; }
+}

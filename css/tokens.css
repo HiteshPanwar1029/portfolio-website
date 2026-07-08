@@ -1,9 +1,10 @@
 /* ============================================================
    tokens.css — Design tokens (single source of truth)
    ------------------------------------------------------------
-   Every colour, font-family and breakpoint used anywhere in the
-   site is declared here. Other stylesheets reference these via
-   var(); they should contain NO raw hex values or font literals.
+   Every colour, font-family, breakpoint and spacing value used
+   anywhere in the site is declared here. Other stylesheets
+   reference these via var(); they should contain NO raw hex
+   values, font literals, or magic padding numbers.
 
    Colour note: there are TWO blues on purpose.
      --accent  (#4718f2) is the tweakable brand accent — progress
@@ -39,6 +40,18 @@
   --font-display: 'Space Grotesk', sans-serif;  /* headlines, nav, UI    */
   --font-mono:    'JetBrains Mono', monospace;   /* labels, tags, data    */
   --font-body:    'Inter', sans-serif;           /* body copy             */
+
+  /* ---- Spacing system ----
+     --pad-x      horizontal page gutter (redefined at ≤768 / ≤480
+                  in responsive.css so EVERY section stays aligned)
+     --sec-y      vertical rhythm between sections
+     --nav-offset scroll-margin-top for anchored sections: sticky
+                  nav height (~64px) + a small breathing gap, so a
+                  nav click lands with the section's top edge just
+                  under the nav — never mid-section. */
+  --pad-x: 44px;
+  --sec-y: clamp(88px, 12vh, 136px);
+  --nav-offset: 76px;
 
   /* ---- Breakpoints (reference values) ----
      NOTE: CSS media queries cannot read custom properties, so the
