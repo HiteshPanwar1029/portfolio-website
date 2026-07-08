@@ -491,63 +491,12 @@
   font-size: 12px; letter-spacing: 0.12em; color: var(--tan); text-align: center;
 }
 
-/* ---------- Case studies ---------- */
+/* ---------- Case studies ----------
+   The three case-study cards reuse the project-card layout
+   (.proj-grid / .proj-card) so both card systems stay identical. */
 .cases {
   background: var(--bg);
-  padding: var(--sec-y) 0;
-}
-.cases-header { max-width: 1280px; margin: 0 auto; padding: 0 var(--pad-x); }
-.cs-rail {
-  margin-top: 52px;
-  display: flex; gap: 28px;
-  overflow-x: auto;
-  padding: 8px var(--pad-x) 48px;
-  scroll-snap-type: x proximity;
-}
-.cs-card {
-  scroll-snap-align: start; flex: none;
-  width: 500px; max-width: 84vw; height: min(72vh, 620px);
-  background: var(--panel);
-  border: 1px solid rgba(var(--fg-rgb), 0.1);
-  border-radius: 2px; padding: 40px;
-  display: flex; flex-direction: column; justify-content: space-between;
-  transition: border-color 0.3s ease;
-}
-.cs-card:hover { border-color: var(--accent); }
-.cs-num { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.1em; color: var(--tan); }
-.cs-tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 11px; letter-spacing: 0.02em; color: var(--fg);
-  border: 1px solid var(--accent);
-  padding: 5px 11px; border-radius: 2px; margin-bottom: 22px;
-}
-.cs-title {
-  font-weight: 600; font-size: clamp(1.7rem, 2.6vw, 2.1rem);
-  line-height: 1.05; letter-spacing: -0.02em; color: var(--fg); margin-bottom: 16px;
-}
-.cs-desc {
-  font-family: var(--font-body);
-  font-size: 15px; line-height: 1.65; color: var(--tan); margin-bottom: 26px;
-}
-.cs-link {
-  font-family: var(--font-mono);
-  font-size: 13px; letter-spacing: 0.04em; color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.25s ease;
-}
-.cs-link:hover { border-color: var(--accent); }
-.desk-hint {
-  max-width: 1280px; margin: 0 auto; padding: 0 var(--pad-x);
-  font-family: var(--font-mono);
-  font-size: 11px; letter-spacing: 0.16em; color: rgba(var(--fg-rgb), 0.32);
-}
-.swipe-hint {
-  margin: 10px auto 0; padding: 0 var(--pad-x);
-  font-family: var(--font-mono);
-  font-size: 11px; letter-spacing: 0.16em; color: rgba(var(--fg-rgb), 0.4);
-  text-align: center;
+  padding: var(--sec-y) var(--pad-x);
 }
 
 /* ---------- Skills ---------- */
@@ -827,7 +776,7 @@
   min-height: 100vh;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center;
-  padding: 120px var(--pad-x) 60px;
+  padding: 90px var(--pad-x) 48px;
   position: relative;
 }
 .contact-grid {
@@ -866,7 +815,7 @@
   color: rgba(var(--fg-rgb), 0.5);
 }
 .contact-foot {
-  position: relative; z-index: 1; margin-top: auto; padding-top: 80px;
+  position: relative; z-index: 1; margin-top: auto; padding-top: 56px;
   font-family: var(--font-mono);
   font-size: 12px; letter-spacing: 0.1em; color: var(--tan);
 }

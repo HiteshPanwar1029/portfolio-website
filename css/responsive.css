@@ -9,22 +9,10 @@
    ============================================================ */
 
 /* Defaults toggled by the queries below. */
-.swipe-hint { display: none; }
 .nn-mobile  { display: none; }
-
-/* Touch devices: show the swipe hint, hide the drag hint. */
-@media (hover: none) {
-  .swipe-hint { display: block; }
-  .desk-hint  { display: none; }
-}
 
 /* ---- ≤1024px : tablet / small laptop ---- */
 @media (max-width: 1024px) {
-  .cs-rail {
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch;
-  }
-  .cs-card { scroll-snap-align: center !important; }
   .proj-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .gov-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
 }
@@ -73,7 +61,6 @@
     align-items: center;
     justify-content: center;
   }
-  .cs-card { width: 85vw !important; height: auto !important; min-height: 62vh; }
 }
 
 /* ---- ≤480px : tight phones ---- */

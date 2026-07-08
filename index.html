@@ -19,11 +19,11 @@
 
   <!-- Styles (order matters: tokens → base → animations → sections → responsive).
        ?v= busts stale browser caches whenever styles change — bump on release. -->
-  <link rel="stylesheet" href="css/tokens.css?v=3">
-  <link rel="stylesheet" href="css/base.css?v=3">
-  <link rel="stylesheet" href="css/animations.css?v=3">
-  <link rel="stylesheet" href="css/sections.css?v=3">
-  <link rel="stylesheet" href="css/responsive.css?v=3">
+  <link rel="stylesheet" href="css/tokens.css?v=4">
+  <link rel="stylesheet" href="css/base.css?v=4">
+  <link rel="stylesheet" href="css/animations.css?v=4">
+  <link rel="stylesheet" href="css/sections.css?v=4">
+  <link rel="stylesheet" href="css/responsive.css?v=4">
 </head>
 <body>
 <div class="site">
@@ -302,41 +302,50 @@
 
   <!-- ============ SECTION 4 — CASE STUDIES ============ -->
   <section id="work" class="cases" data-section data-label="CASE STUDIES">
-    <div class="cases-header reveal-up" data-reveal="up">
-      <div class="eyebrow">Selected Work</div>
-      <h2 class="section-heading">Three problems I've thought hard about.</h2>
+    <div class="wrap">
+      <div class="reveal-up" data-reveal="up">
+        <div class="eyebrow">Selected Work</div>
+        <h2 class="section-heading">Three problems I've thought hard about.</h2>
+      </div>
+      <div class="proj-grid">
+        <article class="proj-card" data-reveal="up" data-delay="0">
+          <div class="proj-num">01</div>
+          <div class="proj-tags">
+            <span class="proj-tag">AI Ethics</span>
+            <span class="proj-tag">Virtue Ethics</span>
+            <span class="proj-tag">Accountability</span>
+          </div>
+          <h3 class="proj-title">The MechaHitler Problem</h3>
+          <p class="proj-desc">When Grok published neo-Nazi content and xAI said nothing — a virtue ethics analysis of the Chun (2017) framework applied to frontier AI.</p>
+          <div class="proj-metric">Corporate character, tested at the frontier</div>
+          <a href="case-studies/mechahitler.html" class="proj-link">Read Analysis →</a>
+        </article>
+        <article class="proj-card" data-reveal="up" data-delay="120">
+          <div class="proj-num">02</div>
+          <div class="proj-tags">
+            <span class="proj-tag">EU AI Act</span>
+            <span class="proj-tag">GDPR</span>
+            <span class="proj-tag">Interactive Learning</span>
+          </div>
+          <h3 class="proj-title">Building the Compliance Layer</h3>
+          <p class="proj-desc">Designed and built a standalone AI compliance learning app covering DPIA methodology, risk classification, and governance frameworks — no build tools, no API costs.</p>
+          <div class="proj-metric">The story behind the app in Projects below</div>
+          <a href="case-studies/compliance-layer.html" class="proj-link">Read the Case Study →</a>
+        </article>
+        <article class="proj-card" data-reveal="up" data-delay="240">
+          <div class="proj-num">03</div>
+          <div class="proj-tags">
+            <span class="proj-tag">GenAI Evaluation</span>
+            <span class="proj-tag">Data Quality</span>
+            <span class="proj-tag">Outlier</span>
+          </div>
+          <h3 class="proj-title">Evaluating What Models Don't Say</h3>
+          <p class="proj-desc">9 months evaluating frontier model outputs for accuracy, bias, and reasoning quality — what I learned about where models fail governance requirements.</p>
+          <div class="proj-metric">Field notes from the evaluation trenches</div>
+          <a href="case-studies/evaluating-models.html" class="proj-link">Read More →</a>
+        </article>
+      </div>
     </div>
-    <div class="hscroll cs-rail">
-      <article class="cs-card">
-        <div class="cs-num">01 / 03</div>
-        <div>
-          <span class="cs-tag">AI Ethics · Virtue Ethics · Corporate Accountability</span>
-          <h3 class="cs-title">The MechaHitler Problem</h3>
-          <p class="cs-desc">When Grok published neo-Nazi content and xAI said nothing — a virtue ethics analysis of the Chun (2017) framework applied to frontier AI.</p>
-          <a href="case-studies/mechahitler.html" class="cs-link">Read Analysis →</a>
-        </div>
-      </article>
-      <article class="cs-card">
-        <div class="cs-num">02 / 03</div>
-        <div>
-          <span class="cs-tag">EU AI Act · GDPR · Interactive Learning</span>
-          <h3 class="cs-title">Building the Compliance Layer</h3>
-          <p class="cs-desc">Designed and built a standalone AI compliance learning app covering DPIA methodology, risk classification, and governance frameworks — no build tools, no API costs.</p>
-          <a href="case-studies/compliance-layer.html" class="cs-link">See Project →</a>
-        </div>
-      </article>
-      <article class="cs-card">
-        <div class="cs-num">03 / 03</div>
-        <div>
-          <span class="cs-tag">GenAI Evaluation · Data Quality · Outlier</span>
-          <h3 class="cs-title">Evaluating What Models Don't Say</h3>
-          <p class="cs-desc">9 months evaluating frontier model outputs for accuracy, bias, and reasoning quality — what I learned about where models fail governance requirements.</p>
-          <a href="case-studies/evaluating-models.html" class="cs-link">Read More →</a>
-        </div>
-      </article>
-    </div>
-    <div class="desk-hint">↔ DRAG OR SHIFT-SCROLL TO EXPLORE</div>
-    <div class="swipe-hint">← swipe →</div>
   </section>
 
   <!-- ============ SECTION 5 — SKILLS ============ -->
@@ -508,6 +517,6 @@
 
 </div>
 
-<script type="module" src="js/main.js?v=3"></script>
+<script type="module" src="js/main.js?v=4"></script>
 </body>
 </html>

@@ -50,8 +50,8 @@
                   nav click lands with the section's top edge just
                   under the nav — never mid-section. */
   --pad-x: 44px;
-  --sec-y: clamp(88px, 12vh, 136px);
-  --nav-offset: 76px;
+  --sec-y: clamp(56px, 8vh, 88px);
+  --nav-offset: 68px;
 
   /* ---- Breakpoints (reference values) ----
      NOTE: CSS media queries cannot read custom properties, so the

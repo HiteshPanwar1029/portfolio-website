@@ -16,7 +16,7 @@
   position: relative;
   overflow: hidden;
   background: var(--bg);
-  padding: 168px 44px 72px;
+  padding: 140px 44px 56px;
   border-bottom: 1px solid rgba(var(--fg-rgb), 0.08);
 }
 .study-head-grid {
@@ -69,7 +69,7 @@
 
 .study-meta {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;
-  margin: 54px 0 0; padding-top: 30px;
+  margin: 42px 0 0; padding-top: 26px;
   border-top: 1px solid rgba(var(--fg-rgb), 0.1);
 }
 .study-meta dt {
@@ -84,8 +84,8 @@
 }
 
 /* ---------- Article ---------- */
-.study-body { background: var(--bg); padding: 40px 0 20px; }
-.study-section { padding: 34px 44px; }
+.study-body { background: var(--bg); padding: 30px 0 14px; }
+.study-section { padding: 26px 44px; }
 .study-wrap { max-width: 720px; margin: 0 auto; }
 
 /* Numbered section kicker (01 —— THE INCIDENT). */
@@ -242,8 +242,8 @@
 .study-pager {
   background: var(--bg);
   border-top: 1px solid rgba(var(--fg-rgb), 0.08);
-  padding: 70px 44px 90px;
-  margin-top: 40px;
+  padding: 56px 44px 72px;
+  margin-top: 30px;
 }
 .study-pager-inner {
   max-width: 880px; margin: 0 auto;
@@ -290,14 +290,14 @@
   .study-meta { grid-template-columns: repeat(2, 1fr); gap: 24px; }
 }
 @media (max-width: 768px) {
-  .study-head { padding-top: 132px; padding-bottom: 54px; }
+  .study-head { padding-top: 112px; padding-bottom: 44px; }
   .study-section { padding-top: 24px; padding-bottom: 24px; }
   .study-pager { padding: 54px 22px 70px; }
   .study-pager-inner { grid-template-columns: 1fr; }
   .study-pager-link.is-next { align-items: flex-start; text-align: left; }
 }
 @media (max-width: 480px) {
-  .study-head { padding-top: 120px; padding-bottom: 46px; }
+  .study-head { padding-top: 102px; padding-bottom: 40px; }
   .study-meta { gap: 20px; }
   .study-wrap p, .study-list li { font-size: 16px; }
   .study-pager { padding: 46px 16px 60px; }
