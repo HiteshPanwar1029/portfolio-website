@@ -111,6 +111,22 @@ function initGdprChips() {
 /* ---------- Consent banner ---------- */
 const CONSENT_KEY = 'hp-consent-dismissed';
 
+/* Each choice shows what that click would have meant on a typical
+   site — the cookie categories involved and the law behind them.
+   Here, of course, nothing is set either way. */
+const CONSENT_OUTCOMES = {
+  accept: {
+    kicker: 'CONSENT GIVEN — GDPR ART. 4(11) & 6(1)(a)',
+    text: 'On a typical site, that click is a legal act: consent must be freely given, specific and informed (Art. 4(11)), and it becomes the lawful basis for processing (Art. 6(1)(a)) — usually for everything below. Here it triggers nothing, because nothing is there.',
+    chips: ['Analytics cookies — 0 set', 'Advertising IDs — 0 set', 'Profiling — 0 set']
+  },
+  reject: {
+    kicker: 'CONSENT REFUSED — EPRIVACY ART. 5(3) · GDPR ART. 7(3) & 21',
+    text: 'Good call. Non-essential cookies need opt-in consent (ePrivacy Directive Art. 5(3)), refusing must be as easy as accepting (GDPR Art. 7(3)), and you can object to profiling (Art. 21). On an average site, this click would have spared you all of the below.',
+    chips: ['Ad-tracking cookies — avoided', 'Third-party analytics — avoided', 'Cross-site profiling — avoided']
+  }
+};
+
 function initConsentBanner() {
   const banner = document.querySelector('.consent');
   if (!banner) return;
@@ -131,16 +147,41 @@ function initConsentBanner() {
     setTimeout(() => { banner.hidden = true; }, 500);
   };
 
-  const finish = () => {
+  const finish = (choice) => {
+    const data = CONSENT_OUTCOMES[choice];
+    const kicker = banner.querySelector('.consent-kicker');
     const text = banner.querySelector('[data-consent=text]');
     const actions = banner.querySelector('.consent-actions');
-    if (text) text.textContent = 'Good choice. There was nothing to take. — Hitesh Panwar, your next AI governance hire.';
-    if (actions) actions.remove();
-    setTimeout(closeOut, 2600);
+    if (!data || !text || !actions) { closeOut(); return; }
+
+    if (kicker) kicker.textContent = data.kicker;
+    text.textContent = data.text;
+
+    // Swap the choice buttons for the outcome: category chips + close.
+    actions.innerHTML = '';
+    const chips = document.createElement('div');
+    chips.className = 'consent-chips';
+    data.chips.forEach((c) => {
+      const s = document.createElement('span');
+      s.className = 'consent-chip';
+      s.textContent = c;
+      chips.appendChild(s);
+    });
+    actions.before(chips);
+
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'consent-btn consent-btn--ghost';
+    close.textContent = 'Close';
+    close.addEventListener('click', closeOut);
+    actions.appendChild(close);
+
+    // Leave time to read, then tidy up on its own.
+    setTimeout(closeOut, 14000);
   };
 
   const accept = banner.querySelector('[data-consent=accept]');
   const reject = banner.querySelector('[data-consent=reject]');
-  if (accept) accept.addEventListener('click', finish);
-  if (reject) reject.addEventListener('click', finish);
+  if (accept) accept.addEventListener('click', () => finish('accept'), { once: true });
+  if (reject) reject.addEventListener('click', () => finish('reject'), { once: true });
 }

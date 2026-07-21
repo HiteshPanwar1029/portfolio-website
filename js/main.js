@@ -7,14 +7,14 @@
 
 /* Import specifiers carry ?v= so a stale browser cache can never mix
    old and new modules — bump together with the <script> tag version. */
-import { initLoader } from './loader.js?v=4';
-import { initScroll } from './scroll.js?v=4';
-import { initCursorGlow } from './cursor-glow.js?v=4';
-import { initCaseStudies } from './case-studies.js?v=4';
-import { initNeuralNetwork } from './neural-network.js?v=4';
-import { initCounters } from './counters.js?v=4';
-import { initJourney } from './journey.js?v=4';
-import { initGovernance } from './governance.js?v=4';
+import { initLoader } from './loader.js?v=5';
+import { initScroll } from './scroll.js?v=5';
+import { initCursorGlow } from './cursor-glow.js?v=5';
+import { initCaseStudies } from './case-studies.js?v=5';
+import { initNeuralNetwork } from './neural-network.js?v=5';
+import { initCounters } from './counters.js?v=5';
+import { initJourney } from './journey.js?v=5';
+import { initGovernance } from './governance.js?v=5';
 
 function init() {
   initLoader();          // hero loading sequence + character reveal

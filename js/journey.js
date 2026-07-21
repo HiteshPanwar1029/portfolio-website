@@ -18,38 +18,38 @@ const PHASES = [
   {
     kicker: 'PHASE 01 · FOUNDATION — 2019–2023',
     title: 'B.Tech Computer Science — GLA University',
-    desc: 'Data structures to computer vision to AI for IIoT. I learned to build the systems I now hold to account — and I can still read them down to the code.',
-    carry: 'Engineering rigour'
+    desc: 'Data structures, computer vision, AI for IIoT. This is where I learned how these systems are built — useful now that my job is asking awkward questions about them.',
+    carry: 'Engineering fundamentals'
   },
   {
     kicker: 'PHASE 02 · PROOF — 2022–2025',
     title: 'Production data science — Dysmech, Pune',
-    desc: 'Defect escapes down 70%. Running costs down 15%. Cold-chain spoilage down 80%. AI in production, where a wrong model costs real money.',
-    carry: 'Shipped AI has consequences'
+    desc: 'Computer vision QA on real production lines: defect escapes down 70%, cold-chain spoilage down 80%. Also where I learned that a wrong model isn’t a research finding — it’s an invoice.',
+    carry: 'Production experience'
   },
   {
     kicker: 'PHASE 03 · PERSPECTIVE — 2025–2026',
     title: 'MSc Management — UCD Smurfit, Dublin',
-    desc: 'Corporate finance, global strategy, AI & business analytics. AI risk, translated into the board’s native language.',
-    carry: 'Boardroom fluency'
+    desc: 'Corporate finance, global strategy, business analytics. Mostly: learning to explain technical risk to the people who own the budget.',
+    carry: 'Business fluency'
   },
   {
     kicker: 'PHASE 04 · PRACTICE — 2025–PRESENT',
     title: 'GenAI evaluation — Outlier & RWS',
-    desc: 'EU AI Act and governance frameworks applied to frontier model outputs. Daily, quantitatively, and for keeps.',
-    carry: 'Model-level governance'
+    desc: 'I review frontier model outputs for accuracy, bias and reasoning quality — daily, against structured rubrics. Governance work at the model level, not the policy level.',
+    carry: 'Hands-on model evaluation'
   },
   {
     kicker: 'PHASE 05 · CREDENTIAL — IN PROGRESS',
-    title: 'CIPP/E — IAPP',
-    desc: 'Europe’s benchmark privacy certification — studied with a spaced-repetition app I built myself, because encoding the law is how you learn it.',
-    carry: 'GDPR fluency'
+    title: 'AIGP & CIPP/E — IAPP',
+    desc: 'IAPP’s AI Governance and EU privacy certifications, both in progress. I built myself a study app to drill for both (see Projects) — either dedication or a very elaborate way to avoid flashcards.',
+    carry: 'GDPR depth'
   },
   {
-    kicker: 'PHASE 06 · DESTINATION — NOW',
+    kicker: 'PHASE 06 · NEXT — LOOKING FOR OPPORTUNITIES',
     title: 'AI Governance & Risk — Dublin / EU',
-    desc: 'Five phases, one direction, zero doubt. Engineering to read the system, industry scars to respect it, management to price it, evaluation practice to test it, CIPP/E to regulate it. Available now.',
-    carry: 'Everything above, compounding',
+    desc: 'The role I’m working towards: engineering to understand the systems, production experience to know what breaks, management training for the business side, AIGP and CIPP/E for the law. Currently looking for opportunities.',
+    carry: 'Everything above',
     cta: true
   }
 ];

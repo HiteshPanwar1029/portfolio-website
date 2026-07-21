@@ -9,10 +9,10 @@
    subpages — content is readable immediately.
    ============================================================ */
 
-import { initScroll } from './scroll.js?v=4';
-import { initCursorGlow } from './cursor-glow.js?v=4';
-import { initCounters } from './counters.js?v=4';
-import { INTRO_SEEN_KEY } from './loader.js?v=4';
+import { initScroll } from './scroll.js?v=5';
+import { initCursorGlow } from './cursor-glow.js?v=5';
+import { initCounters } from './counters.js?v=5';
+import { INTRO_SEEN_KEY } from './loader.js?v=5';
 
 function init() {
   // Visiting any subpage counts as having "seen" the site intro, so

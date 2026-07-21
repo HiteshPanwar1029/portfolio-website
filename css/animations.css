@@ -93,7 +93,11 @@
   transform: translateY(28px);
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
-.reveal-wipe {
+/* The clip lives on the CHILD, not the observed wrapper: a clip-path
+   on the target itself gives it zero visible area, so Chrome's
+   IntersectionObserver never reports it intersecting and the reveal
+   never fires. Observing the unclipped wrapper avoids that. */
+.reveal-wipe > * {
   clip-path: inset(0 100% 0 0);
   transition: clip-path 1.1s cubic-bezier(0.76, 0, 0.24, 1);
 }
@@ -102,7 +106,7 @@
 .reveal-up.is-shown,
 .reveal-far.is-shown,
 .reveal-contact.is-shown { opacity: 1; transform: none; }
-.reveal-wipe.is-shown { clip-path: inset(0 0 0 0); }
+.reveal-wipe.is-shown > * { clip-path: inset(0 0 0 0); }
 /* NOTE: project cards combine reveal + hover transitions in one
    declaration, so their hidden + .is-shown states live on .proj-card
    in sections.css to keep the transition list intact. */
@@ -135,6 +139,7 @@
   .reveal-far,
   .reveal-contact,
   .reveal-wipe,
+  .reveal-wipe > *,
   [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
